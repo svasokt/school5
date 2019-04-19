@@ -15,7 +15,7 @@ require_once "/Applications/MAMP/htdocs/Smile-school5/school5/Anvov/Adapter/Clas
 require_once "/Applications/MAMP/htdocs/Smile-school5/school5/Anvov/Adapter/Adapter.php";
 
 
-$mobilePhone = new MobilePhone();
+$mobilePhone = new CompositeUnit();
 $phone = new Adapter($mobilePhone);
 $phone->dial(911);
 var_dump($phone);
