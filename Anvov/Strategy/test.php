@@ -34,7 +34,4 @@ $carSeller->chooseCar($carPool);
 $carSeller = new RentOffice($engineStrategy);
 $carSeller->chooseCar($carPool)
 
-
-
-
 ?>
