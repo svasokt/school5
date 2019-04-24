@@ -23,5 +23,5 @@ $values = array($fireValue, $largeValue);
 
 $entityFactory = new EntityFactory($db);
 
-$swordEntity = $entityFactory->create('sword', $values, $db);
+$swordEntity = $entityFactory->create('pike', $values, $db);
 echo $swordEntity->getName() . " : " . $swordEntity->getValuesNames();

@@ -18,8 +18,9 @@ class EntityFactory
     {
         $this->db = $db;
         $result = $db->query("SELECT `products`.product_name FROM `products`");
-        $query = $result->fetch(PDO::FETCH_ASSOC);
-        $this->entityNames[] = $query['product_name'];
+        while ($query = $result->fetch(PDO::FETCH_ASSOC)) {
+            $this->entityNames[] = $query['product_name'];
+        }
     }
 
     public function create(string $entityName, array $entityValues)
@@ -39,14 +40,11 @@ class EntityFactory
          * This check code have to be somewhere in middleware
          */
 
-        foreach ($this->entityNames as $name){
-            if ($name == $entityName){
-                continue;
+        if (is_int(array_search($entityName, $this->entityNames))){
+                return new Entity($entityName, $entityValues, $this->db);
             } else {
                 echo "No such entity name";
                 return false;
-            }
         }
-        return new Entity($entityName, $entityValues, $this->db);
     }
 }
