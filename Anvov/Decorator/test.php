@@ -17,6 +17,6 @@ require_once "/Applications/MAMP/htdocs/Smile-school5/school5/Anvov/Decorator/Cl
 
 
 $ternopil = new TernopilHall();
-$extraTernopil = new ExtraSpaceTernopil($ternopil);
-$vipPlace = new VipPlaceTernopil($extraTernopil);
-var_dump($vipPlace->totalMoney());
+$ternopil = new ExtraSpaceTernopil($ternopil);
+$ternopil = new VipPlaceTernopil($ternopil);
+var_dump($ternopil->totalMoney());
