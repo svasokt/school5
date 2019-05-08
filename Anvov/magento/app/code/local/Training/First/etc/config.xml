@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_First>
+            <version>0.1.0</version>
+        </Training_First>
+    </modules>
+    <frontend>
+        <routers>
+            <first>
+                <use>standard</use>
+                <args>
+                    <module>Training_First</module>
+                    <frontName>first</frontName>
+                </args>
+            </first>
+        </routers>
+    </frontend>
+</config>
