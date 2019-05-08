@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <config>
+
     <modules>
         <School_Test>
             <version>1.0.0</version>
