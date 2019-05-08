@@ -7,10 +7,6 @@
         </School_Test>
     </modules>
 
-    <global>
-
-    </global>
-
     <frontend>
         <routers>
             <school_test>
@@ -22,17 +18,5 @@
             </school_test>
         </routers>
     </frontend>
-
-    <admin>
-
-    </admin>
-
-    <adminhtml>
-
-    </adminhtml>
-
-    <default>
-
-    </default>
 
 </config>
