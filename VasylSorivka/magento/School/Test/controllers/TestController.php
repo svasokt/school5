@@ -7,3 +7,4 @@ class School_Test_TestController extends Mage_Core_Controller_Front_Action
         echo 'test';
     }
 }
+
