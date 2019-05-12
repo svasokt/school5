@@ -29,10 +29,9 @@
             </block>
         </reference>
     </first_index_basetypes>
-<!--    not working-->
     <first_index_core>
         <reference name="content">
-            <block type="core/text_list" name="coreLink" template="training/first/fifth.phtml"/>
+            <block type="core/template" name="coreLink" template="training/first/fifth.phtml"/>
         </reference>
     </first_index_core>
 </layout>
