@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <first_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <first_template>training/first/simple_page.phtml</first_template>
+            </action>
+            <block type="page/template_links" name="top.links"/>
+            <block type="customer/form_register" name="customer_form_register" template="customer/form/register.phtml"/>
+        </reference>
+    </first_index_index>
+    <first_index_goodbye>
+        <update handle="first_index_index" />
+    </first_index_goodbye>
+
+</layout>
