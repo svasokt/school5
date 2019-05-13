@@ -12,7 +12,6 @@
 
 class Training_First_Block_Second extends Mage_Core_Block_Template
 {
-
     public function showSomething()
     {
         return "Krencil like to play football";
