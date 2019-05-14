@@ -42,4 +42,22 @@ class Training_First_IndexController extends Mage_Core_Controller_Front_Action
         echo '
         ';
     }
+
+    public function newlayoutAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    public function basetypesAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    public function coreAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
 }

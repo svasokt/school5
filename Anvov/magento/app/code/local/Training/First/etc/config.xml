@@ -11,6 +11,7 @@
             <version>0.1.0</version>
         </Training_First>
     </modules>
+
     <frontend>
         <routers>
             <first>
@@ -21,5 +22,20 @@
                 </args>
             </first>
         </routers>
+        <layout>
+            <updates>
+                <first>
+                    <file>training/first/first.xml</file> <!-- Our layout file name-->
+                </first>
+            </updates>
+        </layout>
     </frontend>
+
+    <global>
+        <blocks>
+            <first>
+                <class>Training_First_Block</class>
+            </first>
+        </blocks>
+    </global>
 </config>

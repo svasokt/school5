@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <first_index_newlayout>
+        <reference name="content">
+            <block type="first/first" name="mymodule" template="training/first/first.phtml">
+                <block type="first/second" name="mymodule2" template="training/first/second.phtml">
+                    <block type="first/third" name="mymodule3" template="training/first/third.phtml">
+                        <action method="layoutMethod">
+                                <key1>My value 1</key1>
+                                <key2>Just valu2</key2>
+                        </action>
+                    </block>
+                </block>
+            </block>
+        </reference>
+    </first_index_newlayout>
+    <first_index_basetypes>
+        <update handle="first_index_newlayout"/>
+        <reference name="content">
+            <block type="first/forth" name="updateonhandle" template="training/first/forth.phtml">
+                <block type="customer/form_register" name="customer_form_register" template="customer/form/register.phtml"/>
+            </block>
+        </reference>
+    </first_index_basetypes>
+    <first_index_core>
+        <reference name="content">
+            <block type="core/template" name="coreLink" template="training/first/fifth.phtml"/>
+        </reference>
+    </first_index_core>
+</layout>
+
