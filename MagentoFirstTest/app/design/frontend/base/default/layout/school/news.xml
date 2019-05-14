@@ -1,0 +1,39 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="header">
+            <block type="core/template" name="welcome" as="welcome" template="school/news/news_button.phtml"/>
+        </reference>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title" ><label>News</label><url>/news</url><title>News</title></action>
+        </reference>
+    </default>
+    <news_index_index>
+        <update handle = "index_index_news_title"/>
+        <reference name="content">
+            <block type="core/text_list" name="list">
+                <block type="school_news/mainPage" name="main_page" template="school/news/main_page.phtml">
+                    <block type="school_news/mainPage" name="child_page" template="school/news/child_page.phtml"></block>
+                </block>
+            </block>
+        </reference>
+        <reference name="left">
+            <block type="school_news/mainPage" name="news_title" template="school/news/news_title.phtml">
+                <action method="setImgSrc"><key>news_left</key><url>/skin/frontend/default/default/images/media/school/news/news_page.jpg</url></action>
+            </block>
+        </reference>
+        <reference name="right">
+            <block type="school_news/mainPage" name="news_right_column" template="school/news/news_right_column.phtml">
+                <action method="setImgSrc"><key>news_right_1</key><url>/skin/frontend/default/default/images/media/school/news/news_main.jpg</url></action>
+                <action method="setImgSrc"><key>news_right_2</key><url>/skin/frontend/default/default/images/media/school/news/right_column.jpg</url></action>
+            </block>
+        </reference>
+    </news_index_index>
+
+    <index_index_news_title>
+        <remove name="top.menu"/>
+        <remove name="global_notices"/>
+        <remove name="global_notices"/>
+        <remove name="right.reports.product.viewed"/>
+    </index_index_news_title>
+</layout>
+

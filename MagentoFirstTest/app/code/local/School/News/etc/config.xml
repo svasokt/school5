@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <School_News>
+            <version>1.0.0</version>
+        </School_News>
+    </modules>
+    <frontend>
+        <routers>
+            <news>
+                <use>standard</use>
+                <args>
+                    <module>School_News</module>
+                    <frontName>news</frontName>
+                </args>
+            </news>
+        </routers>
+        <layout>
+            <updates>
+                <school_news>
+                    <file>school/news.xml</file>
+                </school_news>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <school_news>
+                <class>School_News_Block</class>
+            </school_news>
+        </blocks>
+    </global>
+</config>
