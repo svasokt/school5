@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <School_FirstTest>
-            <active>true</active>
-            <codePool>local</codePool>
-        </School_FirstTest>
-    </modules>
-</config>
