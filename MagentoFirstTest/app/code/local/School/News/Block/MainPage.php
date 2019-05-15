@@ -2,8 +2,6 @@
 class School_News_Block_MainPage extends Mage_Core_Block_Template
 {
     private $imgUrl = array();
-    private $newsTitles = array ('Welcome to Magento','Patterns',
-        'Magento user&admin page','Magento structure');
 
     public function test()
     {
@@ -20,8 +18,28 @@ class School_News_Block_MainPage extends Mage_Core_Block_Template
         return $this->imgUrl[$key];
     }
 
-    public function getNewsTitles()
+    public function getModelResourceName()
     {
-        return $this->newsTitles;
+        $model = Mage::getModel("school/news");
+        return $model->getResourceName();
+    }
+
+   public function getNewsCollection()
+    {
+        return Mage::getModel("school/news")
+            ->getCollection();;
+    }
+
+    public function getNewsModel()
+    {
+        $id = $this->getRequest()->getParams('id');
+        $model = Mage::getModel("school/news");
+        $model->load($id);
+        return $model;
+    }
+
+    public function getNewsModelFromRegister()
+    {
+        return Mage::registry('model_from_School_News_IndexController');
     }
 }
