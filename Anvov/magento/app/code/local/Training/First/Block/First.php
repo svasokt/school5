@@ -17,4 +17,20 @@ class Training_First_Block_First extends Mage_Core_Block_Template
     {
         return "Hello ninjas";
     }
+
+    /**
+     * get collection from weblog
+     */
+    public function showCollection()
+    {
+        $collection = Mage::getModel('weblog/blogpost')->getCollection();
+        return $collection;
+    }
+
+    public function loadModel($id)
+    {
+           $model =  Mage::getModel('weblog/blogpost');
+           $model->load($id);
+           return $model;
+    }
 }
