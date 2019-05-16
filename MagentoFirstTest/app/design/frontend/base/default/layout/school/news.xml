@@ -9,6 +9,9 @@
     </default>
     <news_index_index>
         <update handle = "index_index_news_title"/>
+        <reference name="head">
+            <action method="setTitle"><title>NEWS setTitle</title></action>
+        </reference>
         <reference name="content">
             <block type="core/text_list" name="list">
                 <block type="school_news/mainPage" name="main_page" template="school/news/main_page.phtml">
@@ -16,6 +19,13 @@
                 </block>
             </block>
         </reference>
+    </news_index_index>
+
+    <index_index_news_title>
+        <remove name="top.menu"/>
+        <remove name="global_notices"/>
+        <remove name="global_notices"/>
+        <remove name="right.reports.product.viewed"/>
         <reference name="left">
             <block type="school_news/mainPage" name="news_title" template="school/news/news_title.phtml">
                 <action method="setImgSrc"><key>news_left</key><url>/skin/frontend/default/default/images/media/school/news/news_page.jpg</url></action>
@@ -27,13 +37,30 @@
                 <action method="setImgSrc"><key>news_right_2</key><url>/skin/frontend/default/default/images/media/school/news/right_column.jpg</url></action>
             </block>
         </reference>
-    </news_index_index>
-
-    <index_index_news_title>
-        <remove name="top.menu"/>
-        <remove name="global_notices"/>
-        <remove name="global_notices"/>
-        <remove name="right.reports.product.viewed"/>
     </index_index_news_title>
-</layout>
 
+    <news_index_setnewsfromparams>
+        <update handle = "index_index_news_title"/>
+        <reference name="head">
+            <action method="setTitle"><title>NEWS setNewsFromParams</title></action>
+        </reference>
+        <reference name="content">
+            <block type="school_news/mainPage" name="setnewsfromparams_page" template="school/news/setnewsfromparams_page.phtml"/>
+        </reference>
+    </news_index_setnewsfromparams>
+
+    <news_index_updatenewsfromparams>
+        <update handle = "news_index_setnewsfromparams"/>
+    </news_index_updatenewsfromparams>
+
+    <news_index_article>
+        <update handle = "index_index_news_title"/>
+        <reference name="head">
+            <action method="setTitle"><title>NEWS Articles</title></action>
+        </reference>
+        <reference name="content">
+            <block type="school_news/mainPage" name="article_page" template="school/news/article_page.phtml"/>
+        </reference>
+    </news_index_article>
+
+</layout>

@@ -1,6 +1,8 @@
 <h3>Message from the child_page</h3>
 </br>
 <h4>News titles</h4>
-<?php foreach ($this->getNewsTitles() as $title):?>
-    <h5><?php echo '- "' . $title . '"'?></h5>
+<?php foreach ($this->getNewsCollection() as $newsModel):?>
+    <a href="news/index/article/id/<?php echo $newsModel->getNewsId();?>"><h3><?php echo $newsModel->getTitle();?></h3>
+        <h5><?php echo "author is - " . $newsModel->getAuthor() . ". Message from upgrade 2.0.0" ;?></h5>
+    </a>
 <?php endforeach;?>
