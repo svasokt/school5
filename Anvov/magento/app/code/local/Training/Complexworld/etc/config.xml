@@ -11,6 +11,7 @@
             <version>0.1.0</version>
         </Training_Complexworld>
     </modules>
+
     <frontend>
         <routers>
             <complexworld>
@@ -21,9 +22,22 @@
                 </args>
             </complexworld>
         </routers>
+        <layout>
+            <updates>
+                <complexworld>
+                    <file>training/complexworld/complex.xml</file> <!-- Our layout file name-->
+                </complexworld>
+            </updates>
+        </layout>
     </frontend>
+
     <global>
-        <!-- ... -->
+        <!--        read data from blocks-->
+        <blocks>
+            <complexworld>
+                <class>Training_Complexworld_Block</class>
+            </complexworld>
+        </blocks>
         <models>
             <complexworld>
                 <class>Training_Complexworld_Model</class>

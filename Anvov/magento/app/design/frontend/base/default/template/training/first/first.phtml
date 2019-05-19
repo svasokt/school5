@@ -10,16 +10,16 @@
 
 <p>below is collection</p>
 <?php foreach ($this->showCollection() as $item): ?>
-    <h2> <?php echo $item->getTitle() ?></h2>
+  <h2>  <a href="/first/index/detail/id/<?php echo $item->getBlogpostId();?>"><?php echo $item->getTitle() ?></a> </h2>
     <p><?php echo $item->getDate() ?></p>
 <?php endforeach; ?>
 
 <br>
 
 <p>below is loaded model by parameter</p>
-<h3>
-    <?php
-    $params = $this->getRequest()->getParams();
-    echo $this->loadModel($params['id'])->getTitle(); ?>
-</h3>
+<!--<h3>-->
+<!--    --><?php
+//    $params = $this->getRequest()->getParams();
+//    echo $this->loadModel($params['id'])->getTitle(); ?>
+<!--</h3>-->
 

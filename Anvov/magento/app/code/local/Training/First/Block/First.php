@@ -33,4 +33,19 @@ class Training_First_Block_First extends Mage_Core_Block_Template
            $model->load($id);
            return $model;
     }
+
+    /**
+     * collection with filters and joints
+     */
+    public function filtersCollection()
+    {
+        $collection = Mage::getModel('weblog/blogpost')->getCollection();
+        $collection
+            ->getSelect()
+//            ->addFieldToSelect('*')
+//            ->addFieldToSelect(['title', 'post'])
+        ->join(['admin'=> 'admin_user'],'admin.user_id = blogpost_id', array('*'));
+
+        return $collection;
+    }
 }

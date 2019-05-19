@@ -33,7 +33,7 @@ class Training_Complexworld_IndexController extends Mage_Core_Controller_Front_A
     public function showCollectionAction() {
         $weblog2 = Mage::getModel('complexworld/iphonepost');
         $entries = $weblog2->getCollection()
-            ->addAttributeToSelect('title')
+            ->addAttributeToSelect('title') // we use it only for eav , for simple table addFieldToSelect()
             ->addAttributeToSelect('content');
         $entries->load();
         foreach($entries as $entry)
@@ -44,5 +44,49 @@ class Training_Complexworld_IndexController extends Mage_Core_Controller_Front_A
             echo '<p>' . $entry->getContent() . '</p>';
         }
         echo '</br>Done</br>';
+    }
+
+    /**
+     * correct view with reference to content from EAV table
+     */
+    public function eavListAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    /**
+     * Create
+     */
+    public function createNewPostAction()
+    {
+        $iphonepost = Mage::getModel('complexworld/iphonepost');
+        $iphonepost->setTitle('Index controller post - new!');
+        $iphonepost->setContent('index controller content');
+        $iphonepost->save();
+        echo 'post with ID ' . $iphonepost->getEntityId() . ' created';
+    }
+
+    /**
+     * Update
+     */
+    public function editEavPostAction() {
+        $params = $this->getRequest()->getParams();
+        $iphonepost = Mage::getModel('complexworld/iphonepost');
+        $iphonepost->load($params['id']);
+        $iphonepost->setTitle("The First post fromm controller edited!");
+        $iphonepost->save();
+        echo 'post edited';
+    }
+
+    /**
+     * Delete
+     */
+    public function deleteEavPostAction() {
+        $params = $this->getRequest()->getParams();
+        $blogpost = Mage::getModel('complexworld/iphonepost');
+        $blogpost->load($params['id']);
+        $blogpost->delete();
+        echo 'post removed';
     }
 }
