@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <World_Car>
+            <version>0.1.0</version>
+        </World_Car>
+    </modules>
+    <frontend>
+        <routers>
+            <world>
+                <use>standard</use>
+                <args>
+                    <module>World_Car</module>
+                    <frontName>world</frontName>
+                </args>
+            </world>
+        </routers>
+
+        <layout>
+            <updates>
+                <world module="world">
+                    <file>world.xml</file>
+                </world>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <world>
+                <class>World_Car_Block</class>
+            </world>
+        </blocks>
+        <models>
+            <world> <!-- Как правило тут namespace_modulename или просто modulename -->
+                <class>World_Car_Model</class>
+                <resourceModel>world_resource</resourceModel>
+            </world>
+            <world_resource>
+                <class>World_Car_Model_Resource</class>
+                <entities>
+                    <block> <!-- наименование модели -->
+                        <table>world_car</table> <!-- название таблицы к которой будет "привязана" модель -->
+                    </block>
+                    <ford> <!-- наименование модели -->
+                        <table>world_ford</table> <!-- название таблицы к которой будет "привязана" модель -->
+                    </ford>
+                    <main> <!-- наименование модели -->
+                        <table>world_main</table> <!-- название таблицы к которой будет "привязана" модель -->
+                    </main>
+                </entities>
+            </world_resource>
+        </models>
+        <resources>
+            <world_setup> <!-- именно в папку с таким названием нужно складывать install и upgrade скрипты -->
+                <setup>
+                    <module>World_Car</module>
+                </setup>
+            </world_setup>
+        </resources>
+    </global>
+</config>
