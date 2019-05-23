@@ -37,5 +37,32 @@
                 <class>Training_First_Block</class>
             </first>
         </blocks>
+        <models>
+            <first>
+                <class>Training_First_Model</class>
+                <!--
+                need to create our own resource, can't just
+                use core_resource
+                -->
+                <resourceModel>first_resource</resourceModel>
+            </first>
+            <first_resource>
+                <class>Training_First_Model_Resource</class>
+                <entities>
+                    <blogvovk>
+                        <table>blog_vovk</table>
+                    </blogvovk>
+                </entities>
+            </first_resource>
+        </models>
+        <!-- ... -->
+        <resources>
+            <first_setup>
+                <setup>
+                    <module>Training_First</module>
+                    <class>Training_First_Model_Resource_Setup</class>
+                </setup>
+            </first_setup>
+        </resources>
     </global>
 </config>

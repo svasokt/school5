@@ -1,0 +1,15 @@
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<?php foreach ($this->eavCollection() as $post) : ?>
+<h2><?php echo $post->getTitle() ?></h2>
+<h3><?php echo $post->getContent() ?></h3>
+<h4><?php echo $post->getDate() ?></h4>
+    <h1><?php echo $post->getLastname() .' '.  $post->getFirstname() ?></h1>
+
+<?php //var_dump($this->eavCollection())?>
+<?php endforeach; ?>

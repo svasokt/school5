@@ -1,0 +1,10 @@
+
+<h3>
+    <?php
+    $params = $this->getRequest()->getParams();
+    echo $this->loadModel($params['id'])->getTitle(); ?>
+</h3>
+<h4> <?php echo $this->loadModel($params['id'])->getPost() ?></h4>
+
+<p> <?php echo $this->loadModel($params['id'])->getDate() ?></p>
+

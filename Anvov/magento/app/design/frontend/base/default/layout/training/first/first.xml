@@ -34,5 +34,18 @@
             <block type="core/template" name="coreLink" template="training/first/fifth.phtml"/>
         </reference>
     </first_index_core>
+<!--    finished list with redirect-->
+    <first_index_detail>
+        <reference name="content">
+            <block type="first/first" name="detailPost" template="training/first/sixth.phtml"/>
+        </reference>
+    </first_index_detail>
+<!--    work with collection , joints , addfiltertoselect-->
+    <first_index_collections>
+        <reference name="content">
+            <block type="first/first" name="jointsCollections" template="training/first/joints.phtml"/>
+        </reference>
+    </first_index_collections>
 </layout>
+
 

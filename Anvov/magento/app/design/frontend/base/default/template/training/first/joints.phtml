@@ -1,0 +1,15 @@
+<!--
+ * @category    Training
+ * @package     Training_First
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<?php foreach ($this->filtersCollection() as $item):  ?>
+<h3><?php echo $item->getTitle() ?> </h3>
+    <h2><?php echo $item->getPost() ?> </h2>
+    <p><?php echo $item->getCustomValue() ?> </p>
+<p><?php echo $item->getFirstname() . " " . $item->getLastname() ?></p>
+<?php endforeach; ?>
+
+

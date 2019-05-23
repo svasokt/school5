@@ -60,4 +60,19 @@ class Training_First_IndexController extends Mage_Core_Controller_Front_Action
         $this->loadLayout();
         $this->renderLayout();
     }
+
+    public function detailAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    /**
+     * for collections and joints
+     */
+    public function collectionsAction()
+    {
+        $this->loadLayout();
+        $this->renderLayout();
+    }
 }
