@@ -27,8 +27,6 @@ class Training_Complexworld_Block_Eavlogic extends Mage_Core_Block_Template
 //            ->addAttributeToFilter('content',['neq'=>'This is test content 3'])
 //            ->setPageSize(3)
 //            ->setCurPage(4);
-
-
         $collection->load();
         return $collection;
     }
