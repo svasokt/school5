@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Customer
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Customermodule>
+            <version>0.1.0</version>
+        </Training_Customermodule>
+    </modules>
+
+    <global>
+        <models>
+            <!--Declaring our model path -->
+            <customermodule>
+                <class>Training_Customermodule_Model</class>
+            </customermodule>
+
+            <!--Rewriting model-->
+            <!--This is the tag that customer is using when declaring models in customer/etc/config.xml. This is the first parameter of Mage::getModel('customer/') method -->
+            <customer>
+                <rewrite> <!--Shows that we are rewriting a Model -->
+                    <!--Customer here is the second parameter of Mage::getModel(' /customer') method. This is the class after Model folder -->
+                    <customer>Training_Customermodule_Model_Customer</customer>
+                </rewrite>
+            </customer>
+        </models>
+        <blocks>
+            <customermodule>
+                <!-- This is our Block path-->
+                <class>Training_Customermodule_Block</class>
+            </customermodule>
+
+            <customer>
+                <rewrite>
+                    <!--This is the Account folder and Dashboard.php class after Block directory from customer module -->
+                    <form_register>Training_Customermodule_Block_Form_Register</form_register>
+                </rewrite>
+            </customer>
+        </blocks>
+    </global>
+</config>
