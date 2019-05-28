@@ -53,6 +53,7 @@ class Training_Complexworld_IndexController extends Mage_Core_Controller_Front_A
     {
         $this->loadLayout();
         $this->renderLayout();
+//        phpinfo();
     }
 
     /**

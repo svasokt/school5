@@ -12,6 +12,25 @@
         </Training_Customermodule>
     </modules>
 
+    <frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <training_customermodule before="Mage_Customer">Training_Customermodule</training_customermodule>
+                    </modules>
+                </args>
+            </customer>
+<!--            <customermodule>-->
+<!--                <use>standard</use>-->
+<!--                <args>-->
+<!--                    <module>Training_Customermodule</module>-->
+<!--                    <frontName>customermodule</frontName>-->
+<!--                </args>-->
+<!--            </customermodule>-->
+        </routers>
+    </frontend>
+
     <global>
         <models>
             <!--Declaring our model path -->
