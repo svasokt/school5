@@ -2,7 +2,7 @@
 <config>
     <modules>
         <World_Car>
-            <version>10.9.0</version>
+            <version>0.1.0</version>
         </World_Car>
     </modules>
     <frontend>
@@ -15,6 +15,7 @@
                 </args>
             </world>
         </routers>
+
         <layout>
             <updates>
                 <world module="world">

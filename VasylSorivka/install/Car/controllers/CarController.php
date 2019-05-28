@@ -12,7 +12,7 @@ class World_Car_CarController extends Mage_Core_Controller_Front_Action
         $this->loadLayout();
         $this->renderLayout();
     }
-x   x   x
+
     public function editAction()
     {
         $params = $this->getRequest()->getParams();
@@ -21,7 +21,6 @@ x   x   x
         $car = Mage::getModel('world/ford')->load($params['id']);
         $car->setData('title', $params['title']);
         $car->save();
-        $this->_redirect('world/car');
     }
 
     public function createAction()
@@ -31,7 +30,6 @@ x   x   x
         $car = Mage::getModel('world/ford');
         $car->setData('title', $params['title']);
         $car->save();
-        $this->_redirect('world/car');
     }
     public function deleteAction()
     {
@@ -40,6 +38,5 @@ x   x   x
         $car = Mage::getModel('world/ford')->load($params['id']);
         $car->delete();
         $car->save();
-        $this->_redirect('world/car');
     }
 }
