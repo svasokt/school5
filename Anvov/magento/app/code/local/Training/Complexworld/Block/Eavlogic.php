@@ -19,7 +19,9 @@ class Training_Complexworld_Block_Eavlogic extends Mage_Core_Block_Template
     {
         $collection = Mage::getModel('complexworld/iphonepost')->getCollection();
         $collection
-            ->joinTable(['admin'=> 'admin_user'],'user_id = entity_id', ['firstname', 'lastname'], null , 'left')
+            ->joinTable(['weblog'=> 'blog_posts'],'blogpost_id = entity_id', ['weblog'=>'title','post'], null , 'inner')
+//            ->joinTable(['first'=> 'blog_vovk'],'blogvovk_id = entity_id', ['info'=>'information'], null , 'left')
+            ->joinField('info','first/blogvovk','information', 'blogvovk_id = entity_id', ['title'=> 'andriy'], 'inner')
 //            ->joinAttribute('value','customer/customer_address_entity_varchar', 'value_id=entity_id', null , 'left')
             ->addAttributeToSelect('*'); // we use it only for eav , for simple table addFieldToSelect()
 //            ->addAttributeToSelect('content');
