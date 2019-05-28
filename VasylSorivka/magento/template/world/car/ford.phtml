@@ -1,9 +1,63 @@
-<?php /* @var $this World_Car_Block_Ford*/?>
+<?php /* @var $this World_Car_Block_Ford */ ?>
+
+<?php
+
+//echo $this->getModel(1)->getTitle();
+//
+//echo $this->getModel(2)->getTitle();
+
+$cars = $this->getAllModelsOfFord();
+$fords = $this->getCars();
+$carses = $this->getCar(1);
+?>
 
 <h3>ford</h3>
 
-<?php foreach ($this->getModels() as $model):?>
+<?php foreach ($cars as $car):?>
+    <p><?php echo $car->getTitle() ; ?></p>
+    <a href="<?php echo $this->getCarCreateUrl($car);?>">
+        <button>create</button>
+    </a>
+    <a href="<?php echo $this->getCarEditUrl($car);?>">
+        <button>edit</button>
+    </a>
+    <a href="<?php echo $this->getCarDeleteUrl($car);?>">
+        <button>delete</button>
+    </a>
 
-<h5><?php echo $model; ?></h5>
+<?php endforeach;?>
+<?php $this->getCars()->getSelect()->__toString(); ?>
+<?php foreach ($fords as $ford) {
+    echo $ford->getId() . '=>' . $ford->getTitle( ) . '<br>' ;
+} ?>
 
-<?php endforeach; ?>
+<?php //echo '111'. $carses->getTitle();?>
+
+<?php //foreach ($this->getBlogPosts() as $value){
+//    echo $value->getTitle() .'-' . $value->getModel() . '<br>';
+//}?>
+<h1>join</h1>
+<?php foreach ($this->getJoin() as $value) {
+    echo $value->getTitle() . '-' . $value->getModel() . '<br>';
+}  ?>
+<h1>left join</h1>
+<?php foreach ($this->getLeftJoin() as $value) {
+    echo $value->getTitle() . '-' . $value->getModel() . '<br>';
+}  ?>
+<h1>right join</h1>
+<?php foreach ($this->getRightJoin() as $value) {
+    echo $value->getTitle() . '-' . $value->getModel() . '<br>';
+}  ?>
+<h1>join field</h1>
+<?php foreach ($this->getEavJoinField() as $value){
+    echo $value->getTitle() . '-' . $value->getModel() . '<br>';
+}
+?>
+<h1>join Table</h1>
+<?php foreach ($this->getEavJoinTable() as $value){
+    echo $value->getTitle() . '-' . $value->getModel() . '<br>';
+}
+?>
+
+
+

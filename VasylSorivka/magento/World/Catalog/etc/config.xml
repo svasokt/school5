@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <World_Catalog>
+            <version>1.0.0</version>
+        </World_Catalog>
+    </modules>
+    <frontend>
+        <routers>
+            <catalogs>
+                <use>standard</use>
+                <args>
+                    <module>World_Catalog</module>
+                    <frontName>catalogs</frontName>
+                </args>
+            </catalogs>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <catalog>
+                <rewrite>
+                    <category>World_Catalog_Model_Category</category>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+</config>
