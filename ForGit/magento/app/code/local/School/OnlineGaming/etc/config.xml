@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<config>
+
+    <modules>
+        <School_OnlineGaming>
+            <version>1.0.1</version>
+        </School_OnlineGaming>
+    </modules>
+
+    <frontend>
+        <routers>
+            <onlinegaming>
+                <use>standard</use>
+                <args>
+                    <module>School_OnlineGaming</module>
+                    <frontName>games</frontName>
+                </args>
+            </onlinegaming>
+        </routers>
+        <layout>
+            <updates>
+                <school_onlinegaming>
+                    <file>school/onlinegaming.xml</file>
+                </school_onlinegaming>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <models>
+            <onlinegaming>
+                <class>School_OnlineGaming_Model</class>
+                <resourceModel>onlinegaming_resource</resourceModel>
+            </onlinegaming>
+            <onlinegaming_resource>
+                <class>School_OnlineGaming_Model_Resource</class>
+                <entities>
+                    <eavgames>
+                        <table>onlinegaming_eavgames_entity</table>
+                    </eavgames>
+                    <gamesrank>
+                        <table>onlinegaming_games_rank</table>
+                    </gamesrank>
+                </entities>
+            </onlinegaming_resource>
+            <!--<catalog>
+                <rewrite>
+                    <product>School_OnlineGaming_Model_ProductCorrectName</product>
+                </rewrite>
+            </catalog>-->
+        </models>
+        <events>
+            <onlinegaming_eavgames_check_best_game>
+                <observers>
+                    <school_onlinegaming_model_observer>
+                        <type>singleton</type>
+                        <class>School_OnlineGaming_Model_Observer</class>
+                        <method>showMessage</method>
+                    </school_onlinegaming_model_observer>
+                </observers>
+            </onlinegaming_eavgames_check_best_game>
+        </events>
+        <blocks>
+            <onlinegaming>
+                <class>School_OnlineGaming_Block</class>
+            </onlinegaming>
+        </blocks>
+        <resources>
+            <onlinegaming_setup>
+                <setup>
+                    <module>School_OnlineGaming</module>
+                    <class>School_OnlineGaming_Model_Resource_Setup</class>
+                </setup>
+            </onlinegaming_setup>
+        </resources>
+    </global>
+</config>
