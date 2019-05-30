@@ -60,5 +60,26 @@
                 </rewrite>
             </customer>
         </blocks>
+<!--        Observer-->
+        <events>
+            <cms_page_prepare_save>
+                <observers>
+                    <Pfay_Films_Model_Observer>
+                        <type>singleton</type>
+                        <class>customermodule/observer</class>
+                        <method>example</method>
+                    </Pfay_Films_Model_Observer>
+                </observers>
+            </cms_page_prepare_save>
+            <complexworld_model_load_before>
+                <observers>
+                    <Pfay_Films_Model_Observer>
+                        <type>singleton</type>
+                        <class>customermodule/observer</class>
+                        <method>complexworld</method>
+                    </Pfay_Films_Model_Observer>
+                </observers>
+            </complexworld_model_load_before>
+        </events>
     </global>
 </config>
