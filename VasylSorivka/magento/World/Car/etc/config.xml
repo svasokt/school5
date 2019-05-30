@@ -24,6 +24,35 @@
         </layout>
     </frontend>
     <global>
+        <events>
+            <world_car_load_after>
+                <observers>
+                    <wrap_world_car_load_after>
+                        <type>singleton</type>
+                        <class>world/observer</class>
+                        <method>wrapCarName</method>
+                    </wrap_world_car_load_after>
+                </observers>
+            </world_car_load_after>
+            <world_car_collection_load_after>
+                <observers>
+                    <wrap_world_car_collection_load_after>
+                        <type>singleton</type>
+                        <class>world/observer</class>
+                        <method>wrapCarCollection</method>
+                    </wrap_world_car_collection_load_after>
+                </observers>
+            </world_car_collection_load_after>
+            <world_block_collection_load_after>
+                <observers>
+                    <wrap_world_block_collection_load_after>
+                        <type>singleton</type>
+                        <class>world/observer</class>
+                        <method>wrapBlockCollection</method>
+                    </wrap_world_block_collection_load_after>
+                </observers>
+            </world_block_collection_load_after>
+        </events>
         <blocks>
             <world>
                 <class>World_Car_Block</class>
