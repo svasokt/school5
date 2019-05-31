@@ -61,5 +61,17 @@
                 </setup>
             </complexworld_setup>
         </resources>
+<!--        observer-->
+        <events>
+            <complexword_iphonepost_load_after>
+                <observers>
+                    <Training_complexworld_model_observer>
+                        <type>singleton</type>
+                        <class>complexworld/observer</class>
+                        <method>complexworld</method>
+                    </Training_complexworld_model_observer>
+                </observers>
+            </complexword_iphonepost_load_after>
+        </events>
     </global>
 </config>

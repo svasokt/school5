@@ -11,15 +11,14 @@
  */
 
 
-class Training_Customermodule_Model_Observer extends Varien_Event_Observer
+class Training_Complexworld_Model_Observer extends Varien_Event_Observer
 {
+
     /**
      * observer on save new cms page , it works !
      */
-    public function example($observer)
+    public function complexworld($observer)
     {
-       $page =  $observer->getPage();
-       $page->setTitle("VITALII");
-       $page->save();
+        var_dump($observer);
     }
 }
