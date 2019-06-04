@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Cron
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Cron>
+            <version>0.1.0</version>
+        </Training_Cron>
+    </modules>
+    <crontab>
+        <jobs>
+            <custom_cron_task>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>cron/cron::crontask</model>
+                </run>
+            </custom_cron_task>
+        </jobs>
+    </crontab>
+<!--    <frontend>-->
+<!--        <routers>-->
+<!--            <cron>-->
+<!--                <use>standard</use>-->
+<!--                <args>-->
+<!--                    <module>Training_Cron</module>-->
+<!--                    <frontName>cron</frontName>-->
+<!--                </args>-->
+<!--            </cron>-->
+<!--        </routers>-->
+<!--    </frontend>-->
+    <global>
+        <models>
+            <!--Declaring our model path -->
+            <cron>
+                <class>Training_Cron_Model</class>
+            </cron>
+        </models>
+    </global>
+</config>

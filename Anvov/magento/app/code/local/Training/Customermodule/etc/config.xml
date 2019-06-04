@@ -46,6 +46,10 @@
                     <customer>Training_Customermodule_Model_Customer</customer>
                 </rewrite>
             </customer>
+<!--            CRON-->
+            <cron>
+                <class>customermodule</class>
+            </cron>
         </models>
         <blocks>
             <customermodule>
@@ -73,4 +77,17 @@
             </cms_page_prepare_save>
         </events>
     </global>
+<!--    CRON-->
+    <crontab>
+        <jobs>
+            <vovk_cron_task>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>customermodule/customer::cronRun</model>
+                </run>
+            </vovk_cron_task>
+        </jobs>
+    </crontab>
 </config>

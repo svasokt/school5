@@ -11,7 +11,6 @@
             <version>0.1.0</version>
         </Training_Complexworld>
     </modules>
-
     <frontend>
         <routers>
             <complexworld>
@@ -30,13 +29,36 @@
             </updates>
         </layout>
     </frontend>
-
+    <!--    GRID-->
+    <admin>
+        <routers>
+            <!--Unique identifier-->
+            <training>
+                <use>admin</use>
+                <args>
+                    <module>Training_Complexworld</module>
+                    <frontName>complexworld</frontName>
+                </args>
+            </training>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <!-- Module identifier -->
+                <training_complexworld>
+                    <!-- Location of our layout file should be app/design/adminhtml/default/default/layout/codealist/backendmodule.xml -->
+                    <file>training/complexworld/complex.xml</file>
+                </training_complexworld>
+            </updates>
+        </layout>
+    </adminhtml>
     <global>
         <!--        read data from blocks-->
         <blocks>
-            <complexworld>
+            <training_complexworld>
                 <class>Training_Complexworld_Block</class>
-            </complexworld>
+            </training_complexworld>
         </blocks>
         <models>
             <complexworld>
@@ -51,6 +73,7 @@
                     </iphonepost>
                 </entities>
             </complexworld_resource>
+<!--            CRON-->
         </models>
         <!-- ... -->
         <resources>
@@ -61,17 +84,35 @@
                 </setup>
             </complexworld_setup>
         </resources>
+<!--        HELPER-->
+        <helpers>
+            <training_complexworld>
+                <class>Training_Complexworld_Helper</class>
+            </training_complexworld>
+        </helpers>
 <!--        observer-->
-        <events>
-            <complexword_iphonepost_load_after>
-                <observers>
-                    <Training_complexworld_model_observer>
-                        <type>singleton</type>
-                        <class>complexworld/observer</class>
-                        <method>complexworld</method>
-                    </Training_complexworld_model_observer>
-                </observers>
-            </complexword_iphonepost_load_after>
-        </events>
+<!--        <events>-->
+<!--            <complexword_iphonepost_load_after>-->
+<!--                <observers>-->
+<!--                    <Training_complexworld_model_observer>-->
+<!--                        <type>singleton</type>-->
+<!--                        <class>complexworld/observer</class>-->
+<!--                        <method>complexworld</method>-->
+<!--                    </Training_complexworld_model_observer>-->
+<!--                </observers>-->
+<!--            </complexword_iphonepost_load_after>-->
+<!--        </events>-->
     </global>
+    <crontab>
+        <jobs>
+            <complexworld_cron_task>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>complexworld/iphonepost::myCron</model>
+                </run>
+            </complexworld_cron_task>
+        </jobs>
+    </crontab>
 </config>

@@ -17,4 +17,9 @@ class Training_Complexworld_Model_Iphonepost extends Mage_Core_Model_Abstract
     {
         $this->_init('complexworld/iphonepost');
     }
+
+    public function myCron()
+    {
+        Mage::log("custom log on cron form Iphonepost", null, 'event_debug.log', true);
+    }
 }
