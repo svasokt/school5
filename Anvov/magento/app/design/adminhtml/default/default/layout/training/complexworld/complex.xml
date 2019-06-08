@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <training_adminhtml_index_index>
+        <!--We will include a block in the main container of the page: content-->
+        <reference name="content">
+            <!--Our template file will be created on
+            app/design/adminhtml/default/default/template/codealist/backendmodule.phtml-->
+            <block type="core/template" name="training.complexworld" template="training/complexworld/complex.phtml" before="-" />
+        </reference>
+    </training_adminhtml_index_index>
+</layout>
+
+

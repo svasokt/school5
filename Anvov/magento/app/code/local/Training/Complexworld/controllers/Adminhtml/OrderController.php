@@ -137,6 +137,6 @@ class Training_Complexworld_Adminhtml_OrderController extends Mage_Adminhtml_Con
     protected function _isAllowed()
     {
         // vendor/codealist_backendmodule comes from the values we entered when we declared our menu option in adminhtml.xml
-        return Mage::getSingleton('admin/session')->isAllowed('weblog/blogpost');
+        return Mage::getSingleton('admin/session')->isAllowed('sales/training_complexworld');
     }
 }
