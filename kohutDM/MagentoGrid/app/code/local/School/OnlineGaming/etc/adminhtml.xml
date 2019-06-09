@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <onlinegaming translate="title" module="school_onlinegaming">
+                    <title>OnlineGaming</title>
+                    <sort_order>100</sort_order>
+                        <children>
+                            <onlinegamingbackend translate="title">
+                            <title>Manage OnlineGames</title>
+                            </onlinegamingbackend>
+                        </children>
+                    </onlinegaming>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <onlinegaming translate="title" module="school_onlinegaming">
+            <title>OnlineGaming</title>
+            <sort_order>100</sort_order>
+            <children>
+                <games translate="title">
+                    <title>Games</title>
+                    <sort_order>0</sort_order>
+                    <action>*/gamesgrid</action>
+                </games>
+            </children>
+        </onlinegaming>
+    </menu>
+</config>

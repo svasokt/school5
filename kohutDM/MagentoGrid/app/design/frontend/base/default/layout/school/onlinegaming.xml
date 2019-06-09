@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<layout version="1.0.0">
+    <default>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title" ><label>Online Gaming</label><url>/games</url><title>Online Gaming</title></action>
+        </reference>
+    </default>
+
+    <onlinegaming_index_index>
+        <update handle = "onlinegaming_pages"/>
+        <reference name="content">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_main_content" template="school/onlinegaming/onlinegaming_main_content.phtml"></block>
+        </reference>
+    </onlinegaming_index_index>
+
+    <onlinegaming_index_addnewgame>
+        <update handle = "onlinegaming_pages"/>
+        <reference name="content">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_addnewgame" template="school/onlinegaming/onlinegaming_add_new_game.phtml"></block>
+        </reference>
+    </onlinegaming_index_addnewgame>
+
+    <onlinegaming_index_deletegame>
+        <update handle = "onlinegaming_pages"/>
+        <reference name="content">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_addnewgame" template="school/onlinegaming/onlinegaming_deletegame.phtml"></block>
+        </reference>
+    </onlinegaming_index_deletegame>
+
+    <onlinegaming_index_addnewgamesuccess>
+        <update handle = "onlinegaming_pages"/>
+        <reference name="content">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_addnewgamesuccess" template="school/onlinegaming/onlinegaming_add_new_game_success.phtml"></block>
+        </reference>
+    </onlinegaming_index_addnewgamesuccess>
+
+    <onlinegaming_index_game>
+        <update handle = "onlinegaming_pages"/>
+        <reference name="content">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_game" template="school/onlinegaming/onlinegaming_game.phtml"></block>
+        </reference>
+    </onlinegaming_index_game>
+
+    <onlinegaming_pages>
+        <remove name="top.menu"/>
+        <reference name="head">
+            <action method="setTitle"><title>Online Gaming</title></action>
+        </reference>
+        <reference name="left">
+            <block type="onlinegaming/onlinegamingMain" name="onlinegaming_left" template="school/onlinegaming/onlinegaming_left.phtml">
+                <action method="setImgSrc"><key>onlinegaming_left</key><url>/skin/frontend/default/default/images/media/school/onlinegaming/onlinegaming_left.jpeg</url></action>
+            </block>
+        </reference>
+    </onlinegaming_pages>
+</layout>
