@@ -1,0 +1,21 @@
+<config>
+
+    <!--We declare the new Option Menu-->
+    <menu>
+        <training_eavgrid>
+            <title>Eav Grid</title>
+            <sort_order>400</sort_order>
+            <action>adminhtml/eavgrid/index</action>
+        </training_eavgrid>
+    </menu>
+    <!--Declares Access Controll List for the module-->
+    <acl>
+        <resources>
+            <admin>
+                <training_eavgrid>
+                    <title>list from eav</title>
+                </training_eavgrid>
+            </admin>
+        </resources>
+    </acl>
+</config>

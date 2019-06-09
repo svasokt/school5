@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Eavgrid
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Eavgrid>
+            <version>0.1.0</version>
+        </Training_Eavgrid>
+    </modules>
+<!--   GRID-->
+    <global>
+        <helpers>
+            <training_eavgrid>
+                <class>Training_Eavgrid_Helper</class>
+            </training_eavgrid>
+        </helpers>
+        <blocks>
+            <training_eavgrid>
+                <class>Training_Eavgrid_Block</class>
+            </training_eavgrid>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <training_eavgrid before="Mage_Adminhtml">Training_Eavgrid_Adminhtml</training_eavgrid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <training_eavgrid>
+                    <file>training/eavgrid/grid.xml</file>
+                </training_eavgrid>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
