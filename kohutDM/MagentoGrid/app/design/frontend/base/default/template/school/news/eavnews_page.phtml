@@ -1,0 +1,6 @@
+<h1>EAV NEWS BLOCK</h1>
+<?php foreach ($this->getNewsEavCollection() as $newsModel):?>
+    <a href="news/index/article/id/<?php echo $newsModel->getId();?>"><h3><?php echo $newsModel->getTitle();?></h3>
+        <h5><?php echo "author is - " . $newsModel->getAuthor()?></h5>
+    </a>
+<?php endforeach;?>
