@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <adminhtml_cron_index>
+        <!--We will include a block in the main container of the page: content-->
+        <reference name="content">
+            <block type="training_cron/adminhtml_items" name="training.cron" />
+        </reference>
+    </adminhtml_cron_index>
+<!--    display edit form under the grid-->
+<!--    <adminhtml_cron_edit>-->
+<!--        &lt;!&ndash;We will include a block in the main container of the page: content&ndash;&gt;-->
+<!--        <reference name="content">-->
+<!--            <block type="training_cron/adminhtml_items_grid" name="training.cron_edit" />-->
+<!--        </reference>-->
+<!--    </adminhtml_cron_edit>-->
+</layout>
+
+

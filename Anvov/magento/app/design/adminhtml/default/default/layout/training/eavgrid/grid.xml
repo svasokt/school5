@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Helloworld
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <adminhtml_eavgrid_index>
+        <!--We will include a block in the main container of the page: content-->
+        <reference name="content">
+            <block type="training_eavgrid/adminhtml_items" name="training.eavgrid" />
+        </reference>
+    </adminhtml_eavgrid_index>
+</layout>
+
+

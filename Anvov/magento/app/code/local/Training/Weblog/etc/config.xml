@@ -51,5 +51,17 @@
                 </setup>
             </weblog_setup>
         </resources>
+        <!--        Observer-->
+        <events>
+            <weblog_blogpost_load_before>
+                <observers>
+                    <Training_Weblog_Model_Blogpost>
+                        <type>singleton</type>
+                        <class>weblog/observer</class>
+                        <method>log</method>
+                    </Training_Weblog_Model_Blogpost>
+                </observers>
+            </weblog_blogpost_load_before>
+        </events>
     </global>
 </config>

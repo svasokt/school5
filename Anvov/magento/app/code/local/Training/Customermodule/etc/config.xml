@@ -46,6 +46,10 @@
                     <customer>Training_Customermodule_Model_Customer</customer>
                 </rewrite>
             </customer>
+<!--            CRON-->
+            <cron>
+                <class>customermodule</class>
+            </cron>
         </models>
         <blocks>
             <customermodule>
@@ -71,15 +75,19 @@
                     </Pfay_Films_Model_Observer>
                 </observers>
             </cms_page_prepare_save>
-            <complexworld_model_load_before>
-                <observers>
-                    <Pfay_Films_Model_Observer>
-                        <type>singleton</type>
-                        <class>customermodule/observer</class>
-                        <method>complexworld</method>
-                    </Pfay_Films_Model_Observer>
-                </observers>
-            </complexworld_model_load_before>
         </events>
     </global>
+<!--    CRON-->
+    <crontab>
+        <jobs>
+            <vovk_cron_task>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>customermodule/customer::cronRun</model>
+                </run>
+            </vovk_cron_task>
+        </jobs>
+    </crontab>
 </config>

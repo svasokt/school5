@@ -1,0 +1,47 @@
+<config>
+
+    <!--We declare the new Option Menu-->
+    <menu>
+        <!-- Will be a child of the System option in the menu, you can use Sales, Catalog, Newsletter, etc -->
+        <sales>
+            <children>
+                <!-- This is our module identifier -->
+                <training_complexworld>
+
+                    <title>Codealist Backend Module</title>
+                    <sort_order>400</sort_order>
+
+                    <!--The action composed by frontname/controller/action-->
+                    <action>complexworld/adminhtml_order/index</action>
+                </training_complexworld>
+            </children>
+        </sales>
+    </menu>
+
+
+    <!--Declares Access Controll List for the module-->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <!-- This is for the System option of the Backend Menu -->
+                    <sales translate="title" module="Training_Complexworld">
+                        <title>Codealist Backend Module</title>
+                        <sort_order>60</sort_order>
+                        <children>
+
+                            <!-- This is the module identifier we used above-->
+                            <training_complexworld>
+                                <title>Codealist Backend Module</title>
+                            </training_complexworld>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+</config>

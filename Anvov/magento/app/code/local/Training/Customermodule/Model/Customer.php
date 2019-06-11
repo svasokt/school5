@@ -35,10 +35,15 @@ class Training_Customermodule_Model_Customer extends Mage_Customer_Model_Custome
 {
 
     /**
-     * can check on customer account page
+     * rewrite on customer module, can check on customer account page
      */
     public function getName()
     {
         return 'Stolarov';
+    }
+
+    public function cronRun()
+    {
+        Mage::log("custom log on cron", null, 'event_debug.log', true);
     }
 }

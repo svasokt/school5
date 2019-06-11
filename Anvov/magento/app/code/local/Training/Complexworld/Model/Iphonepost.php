@@ -18,12 +18,8 @@ class Training_Complexworld_Model_Iphonepost extends Mage_Core_Model_Abstract
         $this->_init('complexworld/iphonepost');
     }
 
-    protected function _beforeLoad($id, $field = null)
+    public function myCron()
     {
-        $params = array('object' => $this, 'field' => $field, 'value'=> $id);
-        Mage::dispatchEvent('model_load_before', $params);
-        $params = array_merge($params, $this->_getEventData());
-        Mage::dispatchEvent('complexworld_model'.'_load_before', $params);
-        return $this;
+        Mage::log("custom log on cron form Iphonepost", null, 'event_debug.log', true);
     }
 }
