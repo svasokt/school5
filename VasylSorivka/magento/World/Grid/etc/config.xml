@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <World_Grid>
+            <version>2.0.0</version>
+        </World_Grid>
+    </modules>
+    <global>
+        <helpers>
+            <grid>
+                <class>World_Grid_Helper</class>
+            </grid>
+        </helpers>
+        <blocks>
+            <grid>
+                <class>World_Grid_Block</class>
+            </grid>
+        </blocks>
+        <models>
+            <grid>
+                <class>World_Grid_Model</class>
+                <resourceModel>grid_resource</resourceModel>
+            </grid>
+
+            <grid_resource>
+                <class>World_Grid_Model_Resource</class>
+                <entities>
+                    <posts>
+                        <table>grid_posts</table>
+                    </posts>
+                </entities>
+            </grid_resource>
+        </models>
+        <resources>
+            <posts_setup>
+                <setup>
+                    <module>World_Grid</module>
+                </setup>
+            </posts_setup>
+
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <world_grid before="Mage_Adminhtml">World_Grid_Adminhtml</world_grid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <grid>
+                    <file>grid.xml</file>
+                </grid>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
