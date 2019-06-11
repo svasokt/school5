@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+	  <grid module="grid">
+		<title>Posts</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <adgrid module="admingrid">
+			<title>Manage Posts</title>
+			<sort_order>0</sort_order>
+			<action>*/posts</action>
+		  </adgrid>
+		</children>
+	  </grid>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<grid translate="title" module="grid">
+			  <title>Posts</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <alert translate="title">
+			<title>Manage Posts</title>
+		  </alert>
+			  </children>
+			</grid>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+</config>
