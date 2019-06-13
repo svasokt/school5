@@ -72,6 +72,15 @@ class Training_Eavgrid_Block_Adminhtml_Items_Edit_Form extends Mage_Adminhtml_Bl
             'required'  => true
         ));
 
+        $fieldset->addField('status', 'select', array(
+            'name'      => 'status',
+            'label'     => Mage::helper('checkout')->__('Status'),
+            'title'     => Mage::helper('checkout')->__('Status'),
+            'required'  => true,
+            'values' => array('1' => 'Published','0' => 'Not Published'),
+        ));
+
+
         $form->setValues($model->getData());
         $form->setUseContainer(true);
         $this->setForm($form);

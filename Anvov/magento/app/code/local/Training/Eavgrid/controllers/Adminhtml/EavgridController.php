@@ -119,7 +119,112 @@ class Training_Eavgrid_Adminhtml_EavgridController extends Mage_Adminhtml_Contro
         $this->_redirect('*/*/index');
     }
 
+    public function massDeleteAction()
+    {
+        $entities = $this->getRequest()->getParam('entity');
+        if (!is_array($entities)) {
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Please select item(s)'));
+        } else {
+            try {
+                /** variant from internet, works */
+//                foreach ($entities as $entity) {
+//                    $blog = Mage::getModel('complexworld/iphonepost')->load($entity);
+//                    $blog->delete();
+                $collection = Mage::getModel('complexworld/iphonepost')->getCollection();
+                $collection->addAttributeToFilter('entity_id',['in'=>$entities]);
+                $collection->load();
+                $collection->delete();
+
+                Mage::getSingleton('adminhtml/session')->addSuccess
+                (
+                    Mage::helper('adminhtml')->__('Total of %d record(s) were successfully deleted',
+                        count($entities))
+                );
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
+
+    public function massPublishAction()
+    {
+        $entities = $this->getRequest()->getParam('entity');
+        if (!is_array($entities)) {
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Please select item(s)'));
+        } else {
+            try {
+                $collection = Mage::getModel('complexworld/iphonepost')->getCollection();
+                $collection->addAttributeToFilter('entity_id',['in'=>$entities]);
+                $collection->load();
+                foreach ($collection as $eavBlog) {
+                    $eavBlog->setStatus('1');
+                }
+                $collection->save();
+                Mage::getSingleton('adminhtml/session')->addSuccess
+                (
+                    Mage::helper('adminhtml')->__('Total of %d record(s) were successfully deleted',
+                        count($entities))
+                );
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
+
+    public function massUnpublishAction()
+    {
+        $entities = $this->getRequest()->getParam('entity');
+        if (!is_array($entities)) {
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('adminhtml')->__('Please select item(s)'));
+        } else {
+            try {
+                $collection = Mage::getModel('complexworld/iphonepost')->getCollection();
+                $collection->addAttributeToFilter('entity_id',['in'=>$entities]);
+                $collection->load();
+                foreach ($collection as $eavBlog) {
+                    $eavBlog->setStatus('0');
+                }
+                $collection->save();
+                Mage::getSingleton('adminhtml/session')->addSuccess
+                (
+                    Mage::helper('adminhtml')->__('Total of %d record(s) were successfully deleted',
+                        count($entities))
+                );
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
+
     /**
+     * Export CSV
+     */
+    public function exportCsvAction()
+    {
+        $fileName = 'Blog.csv';
+        $content = $this->getLayout()
+            ->createBlock('training_eavgrid/adminhtml_items_grid')
+            ->getCsv();
+        $this->_prepareDownloadResponse($fileName, $content);
+    }
+
+    /**
+     * Export XML
+     */
+    public function exportXmlAction()
+    {
+        $fileName = 'Blog.xml';
+        $content = $this->getLayout()
+            ->createBlock('training_eavgrid/adminhtml_items_grid')
+            ->getXml();
+        $this->_prepareDownloadResponse($fileName, $content);
+    }
+
+
+/**
      * Check currently called action by permissions for current user
      *
      * @return bool
