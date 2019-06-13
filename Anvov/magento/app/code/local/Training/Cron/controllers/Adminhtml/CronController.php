@@ -64,7 +64,7 @@ class Training_Cron_Adminhtml_CronController extends Mage_Adminhtml_Controller_A
         if ($postData = $this->getRequest()->getPost()) {
 //            $model = Mage::getModel('weblog/blogpost')->load($postData->getId); this variant works too!
             $model = Mage::getSingleton('weblog/blogpost');
-            $model->setData($postData);
+            $model->addData($postData);
 
             try {
                 $model->save();
@@ -104,10 +104,8 @@ class Training_Cron_Adminhtml_CronController extends Mage_Adminhtml_Controller_A
         $this->loadLayout()
             // Make the active menu match the menu config nodes (without 'children' inbetween)
             ->_setActiveMenu('sales/training_cron_items')
-            ->_title($this->__('Sales'))->_title($this->__('Blog'))
-            ->_addBreadcrumb($this->__('Sales'), $this->__('Sales'))
-            ->_addBreadcrumb($this->__('Blog'), $this->__('Blog'));
-
+            ->_title($this->__('Eav Grid'))->_title($this->__('Eav Grid'))
+            ->_addBreadcrumb($this->__('Eav Grid'), $this->__('Eav Grid'));
         return $this;
     }
 
