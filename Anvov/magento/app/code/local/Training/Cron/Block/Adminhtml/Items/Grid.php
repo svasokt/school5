@@ -71,6 +71,10 @@ class Training_Cron_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_Widg
         return parent::_prepareColumns();
     }
 
+    /**
+     * @param $row
+     * @return string
+     */
     public function getRowUrl($row)
     {
         // This is where our row data will link to
