@@ -1,0 +1,9 @@
+<h3>Games list</h3>
+
+<?php foreach ($this->getEavCollection() as $gameModel):?>
+    <a href="<?php echo $this->getUrl('games/index/game/', array ('id' => $gameModel->getId()));?>"><h3><?php echo $gameModel->getTitle();?></h3>
+        <h5><?php echo $gameModel->getCreator()?></h5>
+        <h5>RANK - <?php echo $gameModel->getRank()?></h5>
+        <h5>Quality - <?php echo $gameModel->getQuality()?></h5>
+    </a>
+<?php endforeach;?>
