@@ -4,7 +4,6 @@
  */
 $installer = $this;
 $tablePosts = $installer->getTable('contactustodb/customerposts');
-//die($tablePosts);
 
 $installer->startSetup();
 

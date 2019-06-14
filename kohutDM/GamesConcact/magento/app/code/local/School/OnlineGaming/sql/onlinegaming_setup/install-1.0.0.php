@@ -1,7 +1,6 @@
 <?php
 $installer = $this;
 $installer->startSetup();
-/**
 $installer->addEntityType('onlinegaming_eavgames',Array(
     'entity_model'          =>'onlinegaming/eavgames',
     'table'                 =>'onlinegaming/eavgames',
@@ -40,5 +39,4 @@ $this->addAttribute('onlinegaming_eavgames', 'picture', array(
     'label'             => 'Picture',
     'input'             => 'textarea',
 ));
-**/
 $installer->endSetup();

@@ -5,9 +5,4 @@
             <block type="onlinegaming/adminhtml_gamesgrid" name="gamesgrid"/>
         </reference>
     </adminhtml_onlinegaming_gamesgrid_index>
-    <!--<adminhtml_gamesgrid_edit>
-        <reference name="content">
-            <block type="onlinegaming/adminhtml_gamesgrid_edit" name="gamesgrid_edit"/>
-        </reference>
-    </adminhtml_gamesgrid_edit>-->
 </layout>

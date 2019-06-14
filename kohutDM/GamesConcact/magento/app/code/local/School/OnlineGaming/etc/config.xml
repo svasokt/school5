@@ -86,9 +86,6 @@
             <onlinegaming>
                 <class>School_OnlineGaming_Block</class>
             </onlinegaming>
-<!--            <gamesgrid>
-                <class>School_OnlineGaming_Block_Adminhtml</class>
-            </gamesgrid>-->
         </blocks>
         <resources>
             <onlinegaming_setup>

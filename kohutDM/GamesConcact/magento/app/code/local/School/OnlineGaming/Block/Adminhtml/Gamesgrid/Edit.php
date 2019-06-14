@@ -40,9 +40,4 @@ class School_OnlineGaming_Block_Adminhtml_Gamesgrid_Edit extends Mage_Adminhtml_
             return Mage::helper('adminhtml')->__('New Block');
         }
     }
-
-//    public function getSaveUrl()
-//    {
-//        return $this->getUrl('*/gamesgrid/save');
-//    }
 }

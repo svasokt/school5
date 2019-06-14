@@ -32,13 +32,6 @@ class School_ContactUsToDb_Block_Adminhtml_Customerposts_Edit extends Mage_Admin
             editForm.submit($('edit_form').action+'send/edit/');
         }
         ";
-
-//        $this->_addButton('send', array(
-//            'label'     => Mage::helper('school_contactustodb')->__('Send email'),
-//            'onclick'   => "setLocation('{$this->getUrl('*/*/send/post_id/'.
-//                            Mage::registry('contactustodb_customerposts')->getId(). '')}')",
-//            'class'     => 'save',
-//        ), -100);
     }
 
     /**

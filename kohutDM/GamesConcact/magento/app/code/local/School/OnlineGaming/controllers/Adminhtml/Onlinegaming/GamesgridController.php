@@ -59,16 +59,6 @@ class School_OnlineGaming_Adminhtml_Onlinegaming_GamesgridController extends Mag
             ->renderLayout();
     }
 
-    /**    public function editAction()
-    {
-        $id = $this->getRequest()->getParam('block_id');
-        Mage::register('adminhtml_gamesgrid', Mage::getModel('onlinegaming/eavgames')->load($id));
-        $this->loadLayout();
-        $this->_title($this->__("OnlineGaming Grid Edit"));
-        $this->_setActiveMenu('onlinegaming');
-        $this->renderLayout();
-    }**/
-
     /**
      * Save action
      */
