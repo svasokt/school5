@@ -56,6 +56,7 @@ class Training_Eavgrid_Adminhtml_EavgridController extends Mage_Adminhtml_Contro
         $this->_initAction()
             ->_addBreadcrumb($id ? $this->__('Edit Blog') : $this->__('New Blog'), $id ? $this->__('Edit Blog') : $this->__('New Blog'))
             ->_addContent($this->getLayout()->createBlock('training_eavgrid/adminhtml_items_edit')->setData('action', $this->getUrl('*/eavgrid/save')))
+            ->_addLeft($this->getLayout()->createBlock("training_eavgrid/adminhtml_items_edit_tabs"))
             ->renderLayout();
     }
 
@@ -223,6 +224,45 @@ class Training_Eavgrid_Adminhtml_EavgridController extends Mage_Adminhtml_Contro
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * action for tab in grid
+     */
+    public function additionalAction()
+    {
+        $this->_initAction();
+
+        // Get id if available
+        $id  = $this->getRequest()->getParam('id');
+        $model = Mage::getModel('complexworld/iphonepost');
+
+        if ($id) {
+            // Load record
+            $model->load($id);
+        }
+
+        $this->_title($model->getEntityId() ? $model->getTitle() : $this->__('New Blog'));
+
+        $data = Mage::getSingleton('adminhtml/session')->getData(true);
+        if (!empty($data)) {
+            $model->setData($data);
+        }
+
+        Mage::register('training_eavgrid', $model);
+
+        $this->_initAction()
+            ->_addBreadcrumb($id ? $this->__('Edit Blog') : $this->__('New Blog'), $id ? $this->__('Edit Blog') : $this->__('New Blog'))
+            ->_addContent($this->getLayout()->createBlock('training_eavgrid/adminhtml_items_edit_tabs_additional')->setData('action', $this->getUrl('*/eavgrid/save')))
+            ->_addLeft($this->getLayout()->createBlock("training_eavgrid/adminhtml_items_edit_tabs"))
+            ->renderLayout();
+    }
+
+    public function adGridAction()
+    {
+        $this->_initAction()
+            ->_addContent($this->getLayout()->createBlock('training_cron/adminhtml_items_grid'))
+            ->_addLeft($this->getLayout()->createBlock("training_eavgrid/adminhtml_items_edit_tabs"))
+            ->renderLayout();
+    }
 
 /**
      * Check currently called action by permissions for current user

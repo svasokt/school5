@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Cron
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Contactus>
+            <version>0.1.0</version>
+        </Training_Contactus>
+    </modules>
+    <frontend>
+        <routers>
+            <contacts>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <training_contactus before="Mage_Contacts">Training_Contactus</training_contactus>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+    <global>
+        <helpers>
+            <training_contactus>
+                <class>Training_Contactus_Helper</class>
+            </training_contactus>
+        </helpers>
+        <models>
+            <contactus>
+                <class>Training_Contactus_Model</class>
+                <!--
+                need to create our own resource, can't just
+                use core_resource
+                -->
+                <resourceModel>contactus_resource</resourceModel>
+            </contactus>
+            <contactus_resource>
+                <class>Training_Contactus_Model_Resource</class>
+                <entities>
+                    <contactus>
+                        <table>contact_us</table>
+                    </contactus>
+                </entities>
+            </contactus_resource>
+        </models>
+
+        <blocks>
+            <training_contactus>
+                <class>Training_Contactus_Block</class>
+            </training_contactus>
+        </blocks>
+        <!-- ... -->
+        <resources>
+            <contactus_setup>
+                <setup>
+                    <module>Training_Contactus</module>
+                    <class>Training_Contactus_Model_Resource_Setup</class>
+                </setup>
+            </contactus_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <training_contactus before="Mage_Adminhtml">Training_Contactus_Adminhtml</training_contactus>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <training_contactus>
+                    <file>training/contactus/grid.xml</file>
+                </training_contactus>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
