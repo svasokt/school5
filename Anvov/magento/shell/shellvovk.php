@@ -33,6 +33,7 @@ class Training_Shell_Jetta extends Mage_Shell_Abstract
             ->setFromName('Shell name')
             ->setType('html');
         return $mail;
+
     }
 }
 $shell = new Training_Shell_Jetta();
