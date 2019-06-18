@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <World_Hometask>
+            <active>true</active>
+            <codePool>local</codePool>
+        </World_Hometask>
+    </modules>
+</config>
