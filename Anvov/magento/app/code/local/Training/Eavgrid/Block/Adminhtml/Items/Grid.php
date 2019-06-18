@@ -109,6 +109,7 @@ class Training_Eavgrid_Block_Adminhtml_Items_Grid extends Mage_Adminhtml_Block_W
     public function getRowUrl($row)
     {
         // This is where our row data will link to
+//        Mage::registry('training_eavgrid_itemsId');
         return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
 }

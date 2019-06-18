@@ -10,7 +10,7 @@
  */
 
 
-class Training_Eavgrid_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
+class Training_Eavgrid_Block_Adminhtml_Items_Edit_Tabs_Additional extends Mage_Adminhtml_Block_Widget_Form_Container
 {
     public function __construct()
     {
@@ -23,7 +23,7 @@ class Training_Eavgrid_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_W
         parent::__construct();
 
         $this->_blockGroup = 'training_eavgrid';
-        $this->_controller = 'adminhtml_items';
+        $this->_controller = 'adminhtml_items_edit_tabs_additional_form';
 
         $this->_updateButton('save', 'label', $this->__('Save Eav Blog'));
         $this->_updateButton('delete', 'label', $this->__('Delete Eav Blog'));
@@ -36,11 +36,6 @@ class Training_Eavgrid_Block_Adminhtml_Items_Edit extends Mage_Adminhtml_Block_W
      */
     public function getHeaderText()
     {
-        if (Mage::registry('training_eavgrid')->getId()) {
             return $this->__('Edit Eav grid');
-        }
-        else {
-            return $this->__('New Eav Blog');
-        }
     }
 }

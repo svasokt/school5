@@ -3,7 +3,7 @@
  * Block for GRID
  *
  * @category    Training
- * @package     Training_Cron
+ * @package     Training_Eavgrid
  * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
  * @license     Smile
  */

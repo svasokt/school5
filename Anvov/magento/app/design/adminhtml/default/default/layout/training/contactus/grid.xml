@@ -7,12 +7,12 @@
 -->
 
 <layout version="0.1.0">
-    <adminhtml_eavgrid_index>
+    <adminhtml_contactus_index>
         <!--We will include a block in the main container of the page: content-->
         <reference name="content">
-            <block type="training_eavgrid/adminhtml_items" name="training.eavgrid" />
+            <block type="training_contactus/adminhtml_items" name="training.contactus" />
         </reference>
-    </adminhtml_eavgrid_index>
+    </adminhtml_contactus_index>
 <!--    <adminhtml_eavgrid_additional>-->
 <!--        &lt;!&ndash;We will include a block in the main container of the page: content&ndash;&gt;-->
 <!--        <reference name="content">-->
