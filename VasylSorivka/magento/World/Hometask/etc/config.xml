@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <World_Hometask>
+            <version>1.0.2</version>
+        </World_Hometask>
+    </modules>
+
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <world_hometask before="Mage_Contacts">World_Hometask</world_hometask>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+
+    <frontend>
+        <routers>
+            <hometask>
+                <use>standard</use>
+                <args>
+                    <module>World_Hometask</module>
+                    <frontName>hometask</frontName>
+                </args>
+            </hometask>
+        </routers>
+    </frontend>
+
+    <global>
+        <helpers>
+            <hometask>
+                <class>World_Hometask_Helper</class>
+            </hometask>
+        </helpers>
+        <blocks>
+            <hometask>
+                <class>World_Hometask_Block</class>
+            </hometask>
+        </blocks>
+        <models>
+            <hometask>
+                <class>World_Hometask_Model</class>
+                <resourceModel>hometask_resource</resourceModel>
+            </hometask>
+            <hometask_resource>
+                <class>World_Hometask_Model_Resource</class>
+                <entities>
+                    <contactsus>
+                        <table>world_hometask</table>
+                    </contactsus>
+                </entities>
+            </hometask_resource>
+        </models>
+        <resources>
+            <contactsus_setup>
+                <setup>
+                    <module>World_Hometask</module>
+                </setup>
+            </contactsus_setup>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <world_hometask before="Mage_Adminhtml">World_Hometask_Adminhtml</world_hometask>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <hometask>
+                    <file>hometask.xml</file>
+                </hometask>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>
