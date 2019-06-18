@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <contactustodb translate="title" module="school_contactustodb">
+                    <title>Contact Us Posts</title>
+                    <sort_order>100</sort_order>
+                        <children>
+                            <contactustodbbackend translate="title">
+                            <title>Manage Customer Posts</title>
+                            </contactustodbbackend>
+                        </children>
+                    </contactustodb>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <contactustodb translate="title" module="school_contactustodb">
+            <title>Contact Us Posts</title>
+            <sort_order>100</sort_order>
+            <children>
+                <posts translate="title">
+                    <title>Posts</title>
+                    <sort_order>0</sort_order>
+                    <action>*/contactustodb_customerposts</action>
+                </posts>
+            </children>
+        </contactustodb>
+    </menu>
+</config>

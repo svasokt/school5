@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <School_ContactUsToDb>
+            <version>1.0.0</version>
+        </School_ContactUsToDb>
+    </modules>
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <school_contactustodb before="Mage_Contacts">School_ContactUsToDb</school_contactustodb>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <admin_school_contactustodb>
+                    <file>school/contactustodb.xml</file>
+                </admin_school_contactustodb>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <global>
+        <models>
+            <contactustodb>
+                <class>School_ContactUsToDb_Model</class>
+                <resourceModel>contactustodb_resource</resourceModel>
+            </contactustodb>
+            <contactustodb_resource>
+                <class>School_ContactUsToDb_Model_Resource</class>
+                <entities>
+                    <customerposts>
+                        <table>customer_posts</table>
+                    </customerposts>
+                </entities>
+            </contactustodb_resource>
+        </models>
+        <resources>
+            <contactustodb_setup>
+                <setup>
+                    <module>School_ContactUsToDb</module>
+                    <class>School_ContactUsToDb_Model_Resource_Setup</class>
+                </setup>
+            </contactustodb_setup>
+        </resources>
+        <helpers>
+            <school_contactustodb>
+                <class>School_ContactUsToDb_Helper</class>
+            </school_contactustodb>
+        </helpers>
+        <blocks>
+            <contactustodb>
+                <class>School_ContactUsToDb_Block</class>
+            </contactustodb>
+        </blocks>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <school_contactustodb before="Mage_Adminhtml">School_ContactUsToDb_Adminhtml</school_contactustodb>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>

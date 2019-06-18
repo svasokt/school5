@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<layout version="1.0.0">
+    <adminhtml_contactustodb_customerposts_index>
+        <reference name="content">
+            <block type="contactustodb/adminhtml_customerposts" name="customerposts"/>
+        </reference>
+    </adminhtml_contactustodb_customerposts_index>
+</layout>
