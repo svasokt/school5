@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Cron
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <api>
+        <resources>
+            <contactus_order translate="title" module="contactus">
+                <model>contactus/product_api</model>
+                <title>Contactus Module API</title>
+                <acl>contactus/product</acl>
+                <methods>
+                    <process translate="title" module="contactus">
+                        <title>List of contacts</title>
+                        <method>items</method>
+                    </process>
+                </methods>
+            </contactus_order>
+        </resources>
+        <resources_alias>
+            <product>contactus_order</product>
+        </resources_alias>
+        <v2>
+            <resources_function_prefix>
+                <product>contactusProduct</product>
+            </resources_function_prefix>
+        </v2>
+        <acl>
+            <resources>
+                <contactus translate="title" module="contactus">
+                    <title>Products</title>
+                    <sort_order>5</sort_order>
+                    <product translate="title" module="contactus">
+                        <title>Product info</title>
+                    </product>
+                </contactus>
+            </resources>
+        </acl>
+    </api>
+</config>
