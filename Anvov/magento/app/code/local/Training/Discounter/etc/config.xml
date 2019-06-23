@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Discounter
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Discounter>
+            <version>0.2.0</version>
+        </Training_Discounter>
+    </modules>
+<!--   GRID-->
+    <global>
+        <helpers>
+            <training_discounter>
+                <class>Training_Discounter_Helper</class>
+            </training_discounter>
+        </helpers>
+        <blocks>
+            <training_discounter>
+                <class>Training_Discounter_Block</class>
+            </training_discounter>
+        </blocks>
+        <models>
+            <training_discounter>
+                <class>Training_Discounter_Model</class>
+            </training_discounter>
+        </models>
+        <resources>
+            <discounter_setup>
+                <setup>
+                    <module>Training_Discounter</module>
+                    <class>Training_Discounter_Model_Resource_Setup</class>
+                </setup>
+            </discounter_setup>
+        </resources>
+        <sales>
+            <quote>
+                <totals>
+                    <custom_discount>
+                        <class>training_discounter/sales_quote_address_total_fee</class>
+                        <after>wee,discount,tax</after>
+                    </custom_discount>
+                </totals>
+            </quote>
+            <order_invoice>
+                <totals>
+                    <custom_discount>
+                        <class>training_discounter/sales_invoice_address_total_fee</class>
+                        <after>subtotal</after>
+                    </custom_discount>
+                </totals>
+            </order_invoice>
+            <order_creditmemo>
+                <totals>
+                    <custom_discount>
+                        <class>training_discounter/sales_creditmemo_address_total_fee</class>
+                        <after>subtotal</after>
+                    </custom_discount>
+                </totals>
+            </order_creditmemo>
+        </sales>
+<!--        transfer quote to order-->
+        <fieldsets>
+            <sales_convert_quote_address>
+                <base_custom_discount_amount>
+                    <to_order>*</to_order>
+                </base_custom_discount_amount>
+                <custom_discount_amount>
+                    <to_order>*</to_order>
+                </custom_discount_amount>
+            </sales_convert_quote_address>
+        </fieldsets>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <training_discounter>
+                    <file>training/discounter/total.xml</file>
+                </training_discounter>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <training_discounter>
+                    <file>training/discounter/total.xml</file>
+                </training_discounter>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

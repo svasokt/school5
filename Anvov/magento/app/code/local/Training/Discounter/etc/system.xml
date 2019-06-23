@@ -1,0 +1,60 @@
+<config>
+    <tabs>
+        <discounter translate="label" module="training_discounter">
+            <label>discounter Extensions</label>
+            <sort_order>100</sort_order>
+        </discounter>
+    </tabs>
+    <sections>
+        <discounter translate="label" module="training_discounter">
+            <label>Extension Options</label>
+            <tab>discounter</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <discounter_group translate="label" module="training_discounter">
+                    <label>My Extension Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <discounter_input_boundry translate="label">
+                            <label>From Order Subtotal: </label>
+                            <comment>Order boundry</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </discounter_input_boundry>
+                        <discounter_input_discount translate="label">
+                            <label>Discount Amount: </label>
+                            <comment>How much is discount</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </discounter_input_discount>
+                        <discounter_select translate="label">
+                            <label>Enable Custom Discount: </label>
+                            <comment>Source model provider Magento's default Yes/No values</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </discounter_select>
+                    </fields>
+                </discounter_group>
+            </groups>
+        </discounter>
+    </sections>
+</config>
