@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<layout version="1.0.0">
+    <school_luxurytax_add_order_total>
+        <reference name="order_totals">
+            <block type="school_luxurytax/total_luxurytax_luxurytax" name="total_luxurytax"/>
+        </reference>
+    </school_luxurytax_add_order_total>
+    <school_luxurytax_add_invoice_total>
+        <reference name="invoice_totals">
+            <block type="school_luxurytax/total_luxurytax_luxurytax" name="total_luxurytax"/>
+        </reference>
+    </school_luxurytax_add_invoice_total>
+    <school_luxurytax_add_creditmemo_total>
+        <reference name="creditmemo_totals">
+            <block type="school_luxurytax/total_luxurytax_luxurytax" name="total_luxurytax"/>
+        </reference>
+    </school_luxurytax_add_creditmemo_total>
+
+    <adminhtml_sales_order_view>
+        <update handle="school_luxurytax_add_order_total"/>
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_invoice_new>
+        <update handle="school_luxurytax_add_invoice_total"/>
+    </adminhtml_sales_order_invoice_new>
+    <adminhtml_sales_order_invoice_updateqty>
+        <update handle="school_luxurytax_add_invoice_total"/>
+    </adminhtml_sales_order_invoice_updateqty>
+    <adminhtml_sales_order_invoice_view>
+        <update handle="school_luxurytax_add_invoice_total"/>
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_creditmemo_new>
+        <update handle="school_luxurytax_add_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_new>
+    <adminhtml_sales_order_creditmemo_updateqty>
+        <update handle="school_luxurytax_add_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_updateqty>
+    <adminhtml_sales_order_creditmemo_view>
+        <update handle="school_luxurytax_add_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_view>
+</layout>
