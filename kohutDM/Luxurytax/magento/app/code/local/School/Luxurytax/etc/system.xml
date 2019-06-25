@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <luxurytaxconfig translate="label" module="school_luxurytax">
+            <label>Luxury TAX</label>
+            <sort_order>1</sort_order>
+        </luxurytaxconfig>
+    </tabs>
+    <sections>
+        <luxurytax_options translate="label" module="school_luxurytax">
+            <label>Luxury Tax Config Options</label>
+            <tab>luxurytaxconfig</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <luxurytax_group translate="label">
+                    <label>Config Fields</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <luxurytax_fetch_label>
+                            <label>Luxury tax frontend label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </luxurytax_fetch_label>
+                        <luxurytax_base_luxury_tax_amount>
+                            <label>Base luxury tax amount</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </luxurytax_base_luxury_tax_amount>
+                        <luxurytax_price_value>
+                            <label>Minimal price value of luxury taxing</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </luxurytax_price_value>
+                    </fields>
+                </luxurytax_group>
+            </groups>
+        </luxurytax_options>
+    </sections>
+</config>
