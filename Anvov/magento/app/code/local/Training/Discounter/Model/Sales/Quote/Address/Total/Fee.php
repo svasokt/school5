@@ -26,14 +26,17 @@ class Training_Discounter_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales
 
         $quote = $address->getQuote();
 
+        /** set 0 in address */
         $this->_setAmount(0);
         $this->_setBaseAmount(0);
 
+        /** set 0 in quote */
         $quote->setCustomDiscountAmount(0);
         $quote->setBaseCustomDiscountAmount(0);
 
+        /**  $address->getDiscountAmount() - it`s core discount, we need to exclude case with double discount*/
         if($allowDiscount == '1') {
-            if($address->getData('subtotal') >  $discountBoundry) {
+            if($address->getData('subtotal') >  $discountBoundry && $address->getDiscountAmount() == 0) {
                 $discount = Mage::app()->getStore()->convertPrice($baseDiscount);
 
                 $address->setBaseCustomDiscountAmount($baseDiscount);

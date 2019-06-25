@@ -7,7 +7,7 @@
     </tabs>
     <sections>
         <discounter translate="label" module="training_discounter">
-            <label>Extension Options</label>
+            <label>Custom Discount</label>
             <tab>discounter</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
@@ -16,7 +16,7 @@
 
             <groups>
                 <discounter_group translate="label" module="training_discounter">
-                    <label>My Extension Options</label>
+                    <label>Custom Discount</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>

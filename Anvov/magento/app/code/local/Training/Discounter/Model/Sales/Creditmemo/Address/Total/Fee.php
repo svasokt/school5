@@ -19,7 +19,7 @@ class Training_Discounter_Model_Sales_Creditmemo_Address_Total_Fee extends Mage_
         $baseCustomDiscountAmount = $order->getBaseCustomDiscountAmount();
 
         $creditmemo->setCustomDiscountAmount($customDiscount);
-        $creditmemo->setBaseLuxuryTaxAmount($baseCustomDiscountAmount);
+        $creditmemo->setBaseCustomDiscountAmount($baseCustomDiscountAmount);
 
         $creditmemo->setGrandTotal($creditmemo->getGrandTotal() - $customDiscount);
         $creditmemo->setBaseGrandTotal($creditmemo->getBaseGrandTotal() - $baseCustomDiscountAmount);

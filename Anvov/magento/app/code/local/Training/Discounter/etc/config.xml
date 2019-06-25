@@ -8,7 +8,7 @@
 <config>
     <modules>
         <Training_Discounter>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </Training_Discounter>
     </modules>
 <!--   GRID-->
