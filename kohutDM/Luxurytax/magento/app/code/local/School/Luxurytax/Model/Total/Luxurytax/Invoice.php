@@ -3,7 +3,7 @@ class School_Luxurytax_Model_Total_Luxurytax_Invoice extends Mage_Sales_Model_Or
 {
 	public function collect(Mage_Sales_Model_Order_Invoice $invoice)
     {
-	$order = $invoice->getOrder();
+    $order = $invoice->getOrder();
 	$luxuryTaxAmount = $order->getLuxuryTaxAmount();
 	$baseLuxuryTaxAmount = $order->getBaseLuxuryTaxAmount();
 
