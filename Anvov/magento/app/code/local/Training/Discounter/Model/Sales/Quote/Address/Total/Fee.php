@@ -20,9 +20,9 @@ class Training_Discounter_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales
         parent::collect($address);
 
         /** system.xml configs */
-        $discountBoundry = Mage::getStoreConfig('discounter/discounter_group/discounter_input_boundry');
-        $baseDiscount = Mage::getStoreConfig('discounter/discounter_group/discounter_input_discount');
-        $allowDiscount = Mage::getStoreConfig('discounter/discounter_group/discounter_select');
+        $discountBoundry = (float)Mage::getStoreConfig('discounter/discounter_group/discounter_input_boundry');
+        $baseDiscount = (float)Mage::getStoreConfig('discounter/discounter_group/discounter_input_discount');
+        $allowDiscount = (float)Mage::getStoreConfig('discounter/discounter_group/discounter_select');
 
         $quote = $address->getQuote();
 
@@ -30,7 +30,7 @@ class Training_Discounter_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales
         $this->_setAmount(0);
         $this->_setBaseAmount(0);
 
-        /** set 0 in quote */
+        /** set 0 in quote, level lower */
         $quote->setCustomDiscountAmount(0);
         $quote->setBaseCustomDiscountAmount(0);
 
@@ -45,6 +45,7 @@ class Training_Discounter_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales
                 $address->setGrandTotal($address->getGrandTotal() - $discount);
             }
         }
+
         return $this;
     }
 
@@ -59,6 +60,7 @@ class Training_Discounter_Model_Sales_Quote_Address_Total_Fee extends Mage_Sales
                 'value' => $amount,
             ));
         }
+
         return $this;
     }
 }

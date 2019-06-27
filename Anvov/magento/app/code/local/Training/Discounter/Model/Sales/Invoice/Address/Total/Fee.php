@@ -18,9 +18,8 @@ class Training_Discounter_Model_Sales_Invoice_Address_Total_Fee extends Mage_Sal
         $customDiscount = $order->getCustomDiscountAmount();
         $baseCustomDiscountAmount = $order->getBaseCustomDiscountAmount();
 
-        $invoice->setCustomDiscountAmount($customDiscount);
-        $invoice->setBaseCustomDiscountAmount($baseCustomDiscountAmount);
-
+        $invoice->setData("custom_discount",$customDiscount);
+        $invoice->setData("base_custom_discount",$baseCustomDiscountAmount);
         $invoice->setGrandTotal($invoice->getGrandTotal() - $customDiscount);
         $invoice->setBaseGrandTotal($invoice->getBaseGrandTotal() - $baseCustomDiscountAmount);
 

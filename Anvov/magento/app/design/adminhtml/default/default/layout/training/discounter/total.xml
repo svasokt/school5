@@ -23,12 +23,37 @@
         </reference>
     </adminhtml_sales_order_invoice_view>
     <adminhtml_sales_order_creditmemo_new>
-        <reference name="order_totals">
+        <reference name="creditmemo_totals">
             <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
         </reference>
     </adminhtml_sales_order_creditmemo_new>
     <adminhtml_sales_order_creditmemo_view>
-        <reference name="order_totals">
+        <reference name="creditmemo_totals">
+            <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
+        </reference>
+    </adminhtml_sales_order_creditmemo_view>
+    <adminhtml_sales_order_invoice_updateqty>
+        <reference name="invoice_totals">
+            <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
+        </reference>
+    </adminhtml_sales_order_invoice_updateqty>
+    <adminhtml_sales_order_invoice_view>
+        <reference name="invoice_totals">
+            <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
+        </reference>
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_creditmemo_new>
+        <reference name="creditmemo_totals">
+            <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
+        </reference>
+    </adminhtml_sales_order_creditmemo_new>
+    <adminhtml_sales_order_creditmemo_updateqty>
+        <reference name="creditmemo_totals">
+            <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
+        </reference>
+    </adminhtml_sales_order_creditmemo_updateqty>
+    <adminhtml_sales_order_creditmemo_view>
+        <reference name="creditmemo_totals">
             <block type="training_discounter/order_total" name="training.discounter.order.adminhtml" />
         </reference>
     </adminhtml_sales_order_creditmemo_view>

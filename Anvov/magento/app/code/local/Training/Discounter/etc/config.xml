@@ -64,6 +64,7 @@
         </sales>
 <!--        transfer quote to order-->
         <fieldsets>
+<!--            maube better without _address , depends on where we set total in  model , in quote or address-->
             <sales_convert_quote_address>
                 <base_custom_discount_amount>
                     <to_order>*</to_order>
