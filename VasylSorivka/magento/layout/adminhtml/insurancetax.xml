@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<layout version="1.0.0">
+    <insurancetax_order_total>
+        <reference name="order_totals">
+            <block type="insurancetax/total_insurancetax_insurancetax" name="total_insurancetax"/>
+        </reference>
+    </insurancetax_order_total>
+    <insurancetax_invoice_total>
+        <reference name="invoice_totals">
+            <block type="insurancetax/total_insurancetax_insurancetax" name="total_insurancetax"/>
+        </reference>
+    </insurancetax_invoice_total>
+    <insurancetax_creditmemo_total>
+        <reference name="creditmemo_totals">
+            <block type="insurancetax/total_insurancetax_insurancetax" name="total_insurancetax"/>
+        </reference>
+    </insurancetax_creditmemo_total>
+
+    <adminhtml_sales_order_view>
+        <update handle="insurancetax_order_total"/>
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_invoice_new>
+        <update handle="insurancetax_invoice_total"/>
+    </adminhtml_sales_order_invoice_new>
+    <adminhtml_sales_order_invoice_updateqty>
+        <update handle="insurancetax_invoice_total"/>
+    </adminhtml_sales_order_invoice_updateqty>
+    <adminhtml_sales_order_invoice_view>
+        <update handle="insurancetax_invoice_total"/>
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_creditmemo_new>
+        <update handle="insurancetax_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_new>
+    <adminhtml_sales_order_creditmemo_updateqty>
+        <update handle="insurancetax_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_updateqty>
+    <adminhtml_sales_order_creditmemo_view>
+        <update handle="insurancetax_creditmemo_total"/>
+    </adminhtml_sales_order_creditmemo_view>
+</layout>
