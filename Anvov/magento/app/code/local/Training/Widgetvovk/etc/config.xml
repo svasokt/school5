@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Widgetvovk
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Widgetvovk>
+            <version>0.1.0</version>
+        </Training_Widgetvovk>
+    </modules>
+    <global>
+        <helpers>
+            <training_widgetvovk>
+                <class>Training_Widgetvovk_Helper</class>
+            </training_widgetvovk>
+        </helpers>
+        <blocks>
+            <training_widgetvovk>
+                <!-- Set a block definition and lookup directory -->
+                <class>Training_Widgetvovk_Block</class>
+            </training_widgetvovk>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <training_widgetvovk before="Mage_Adminhtml">Training_Widgetvovk_Adminhtml</training_widgetvovk>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
