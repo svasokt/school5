@@ -1,0 +1,8 @@
+<h3>You added a new game</h3>
+<h1><?php echo $this->getEavModelFromRegistry()->getTitle()?></h1>
+<!--<img src="<?php echo $this->getEavModelFromRegistry()->getPicture()?>"
+     alt="<?php echo $this->getEavModelFromRegistry()->getTitle()?>"/>-->
+<p><?php echo $this->getEavModelFromRegistry()->getDescription()?></p>
+</br>
+<p><?php echo $this->getEavModelFromRegistry()->getCreator()?></p>
+<a href="<?php echo $this->getUrl('games')?>"><h1>BACK</h1></a>

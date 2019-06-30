@@ -1,0 +1,30 @@
+<h1>TRY <a href="/games/index/game/id/<?php echo $this->getGameId()?>/"><?php echo $this->getGameTitle()?></a></h1>
+
+<div class="slideshow-container">
+    <ul class="slideshow" id="gameslider">
+        <li><a href="{{config path="web/secure/base_url"}}accessories/eyewear.html"><img alt="media/<?php echo $this->getImage1()?>" src="/media/<?php echo $this->getImage1()?>" /></a></li>
+        <li><a href="{{config path="web/secure/base_url"}}women.html"><img alt="media/<?php echo $this->getImage2()?>" src="/media/<?php echo $this->getImage2()?>" /></a></li>
+        <li><a href="{{config path="web/secure/base_url"}}men.html"><img alt="media/<?php echo $this->getImage3()?>" src="/media/<?php echo $this->getImage3()?>" /></a></li>
+    </ul>
+    <style type="text/css"><!--
+        /* Reset the .std styles */
+
+        #gameslider{
+            max-width: 600px;
+            min-height: 350px;
+            position: relative;
+            margin: auto;
+        }
+        .std ul.products-grid li {
+            list-style: none;
+            margin-left: 0;
+        }
+        .std ul.products-grid li .product-info {
+            padding-bottom: 0 !important;
+            min-height: 0 !important;
+        }
+        .widget-new-products h2 {
+            text-align: center;
+        }
+        --></style>
+</div>
