@@ -55,6 +55,21 @@
                     </test_2>
                 </values>
             </another_custom_text>
+            <image>
+                <label>Image</label>
+                <description>Promotion image</description>
+                <visible>1</visible>
+                <type>label</type>
+                <helper_block>
+                    <type>training_widgetvovk/widget_image</type>
+                    <data>
+                        <button translate="open">
+                            <open>Insert Image...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>11</sort_order>
+            </image>
         </parameters>
     </training_widgetvovk_adminhtml_topblogs>
 </widgets>
