@@ -1,0 +1,37 @@
+<config>
+    <modules>
+        <World_Postwidget>
+            <version>1.0.0</version>
+        </World_Postwidget>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <post_widget before="Mage_Adminhtml">World_Postwidget_Adminhtml</post_widget>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+        <blocks>
+            <post_widget>
+                <class>World_Postwidget_Block</class>
+            </post_widget>
+        </blocks>
+        <helpers>
+            <post_widget>
+                <class>World_Postwidget_Helper</class>
+            </post_widget>
+        </helpers>
+<!--        <models>-->
+<!--            <post_widget>-->
+<!--                <class>World_Postwidget_Model</class>-->
+<!--            </post_widget>-->
+<!--        </models>-->
+    </global>
+</config>
+
+
