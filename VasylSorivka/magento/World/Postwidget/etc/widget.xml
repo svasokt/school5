@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<widgets>
+    <post_widget_info type="post_widget/info" translate="post widget" module="post_widget">
+        <name>Top Post</name>
+        <description type="desc">Interesting Post</description>
+        <parameters>
+            <post_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Post</label>
+                <type>label</type>
+                <helper_block>
+                    <type>post_widget/widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Post...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>10</sort_order>
+            </post_id>
+            <custom_text translate="label">
+                <visible>1</visible>
+                <label>Custom Text</label>
+                <description>Some description</description>
+                <type>text</type>
+            </custom_text>
+            <another_custom_text translate="label">
+                <visible>1</visible>
+                <label>Anchor Custom Text</label>
+                <type>text</type>
+            </another_custom_text>
+        </parameters>
+    </post_widget_info>
+</widgets>
