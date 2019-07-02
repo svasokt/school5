@@ -9,7 +9,8 @@
 <h2><?php echo $post->getTitle() ?></h2>
 <h3><?php echo $post->getContent() ?></h3>
 <h4><?php echo $post->getDate() ?></h4>
-    <h1><?php echo $post->getLastname() .' '.  $post->getFirstname() ?></h1>
+    <h1><?php echo $post->getTitle() .' - '.  $post->getPost() ?></h1>
+<h2><?php echo $post->getInfo()?></h2>
 
 <?php //var_dump($this->eavCollection())?>
 <?php endforeach; ?>

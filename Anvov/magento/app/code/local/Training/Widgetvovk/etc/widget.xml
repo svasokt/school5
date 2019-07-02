@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Widgetvovk
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<widgets>
+    <training_widgetvovk_adminhtml_topblogs type="training_widgetvovk/adminhtml_topblogs"
+                                            translate="name description"
+                                            module="training_widgetvovk">
+        <name>Top Vovk</name>
+        <description type="desc">Lists Top blogs</description>
+        <parameters>
+            <blogpost_id type ="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <lable>Blog</lable>
+                <type>label</type>
+                <helper_block>
+                    <type>training_widgetvovk/widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Blog ..</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>10</sort_order>
+            </blogpost_id>
+            <custom_text translate="label">
+                <visible>1</visible>
+                <label>title in widget</label>
+                <description>Some description</description>
+                <type>text</type>
+            </custom_text>
+            <another_custom_text translate="label">
+                <visible>1</visible>
+                <label>selector in widget</label>
+                <description>Some select</description>
+                <type>select</type>
+                <value>1</value>
+                <values>
+                    <default translate="label">
+                        <value>1</value>
+                        <label>Option 1 </label>
+                    </default>
+                    <test_1 translate="label">
+                        <value>2</value>
+                        <label>Option 2</label>
+                    </test_1>
+                    <test_2 translate="label">
+                        <value>3</value>
+                        <label>Option 3</label>
+                    </test_2>
+                </values>
+            </another_custom_text>
+            <image>
+                <label>Image</label>
+                <description>Promotion image</description>
+                <visible>1</visible>
+                <type>label</type>
+                <helper_block>
+                    <type>training_widgetvovk/widget_image</type>
+                    <data>
+                        <button translate="open">
+                            <open>Insert Image...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>11</sort_order>
+            </image>
+        </parameters>
+    </training_widgetvovk_adminhtml_topblogs>
+</widgets>

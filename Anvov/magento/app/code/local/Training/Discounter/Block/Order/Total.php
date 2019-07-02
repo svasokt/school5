@@ -10,8 +10,10 @@
 
 class Training_Discounter_Block_Order_Total extends Mage_Sales_Block_Order_Totals
 {
-    public function initTotals(){
+    public function initTotals()
+    {
         $order = $this->getParentBlock()->getOrder();
+
         if($order->getCustomDiscountAmount() > 0){
             $this->getParentBlock()->addTotal(new Varien_Object(array(
                 'code' => 'custom_discount',
