@@ -26,7 +26,6 @@
             <luxurytax_setup>
                 <setup>
                     <module>school_luxurytax</module>
-                    <class>School_Luxurytax_Model_Resource_Setup</class>
                 </setup>
             </luxurytax_setup>
         </resources>

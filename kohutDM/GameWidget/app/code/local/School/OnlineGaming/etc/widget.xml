@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<widgets>
+    <Onlinegaming_widget type="onlinegaming/Widget_Widget" translate="name description" module="school_onlinegaming">
+        <name>OnlineGaming Widget</name>
+        <description type="desc">OnlineGaming Widget</description>
+        <parameters>
+            <select_game translate="label">
+                <visible>1</visible>
+                <label>Choose game by select</label>
+                <type>select</type>
+                <value>2</value>
+                <values>
+                    <first translate="label">
+                        <value>0</value>
+                        <label>My first game</label>
+                    </first>
+                    <second translate="label">
+                        <value>1</value>
+                        <label>My second game</label>
+                    </second>
+                    <third translate="label">
+                        <value>2</value>
+                        <label>My third game</label>
+                    </third>
+                </values>
+            </select_game>
+            <game_id type="complex" translate="label">
+                <visible>1</visible>
+                <label>Choose game!</label>
+                <required>1</required>
+                <type>label</type>
+                <helper_block>
+                    <type>onlinegaming/Widget_Chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select game...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </game_id>
+            <image1 translate="label">
+                <label>Image -> </label>
+                <visible>1</visible>
+                <type>label</type>
+                <helper_block>
+                    <type>onlinegaming/Widget_ImageChooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Insert Image...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </image1>
+            <image2 translate="label">
+                <label>Image -> </label>
+                <visible>1</visible>
+                <type>label</type>
+                <helper_block>
+                    <type>onlinegaming/Widget_ImageChooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Insert Image...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </image2>
+            <image3 translate="label">
+                <label>Image -> </label>
+                <visible>1</visible>
+                <type>label</type>
+                <helper_block>
+                    <type>onlinegaming/Widget_ImageChooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Insert Image...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </image3>
+        </parameters>
+    </Onlinegaming_widget>
+</widgets>
