@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Avatarcustomer
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Avatarcustomer>
+            <version>0.1.1</version>
+        </Training_Avatarcustomer>
+    </modules>
+    <global>
+        <helpers>
+            <training_avatarcustomer>
+                <class>Training_Avatarcustomer_Helper</class>
+            </training_avatarcustomer>
+        </helpers>
+        <blocks>
+            <training_avatarcustomer>
+                <class>Training_Avatarcustomer_Block</class>
+            </training_avatarcustomer>
+        </blocks>
+        <resources>
+            <avatarcustomer_setup>
+                <setup>
+                    <module>Training_Avatarcustomer</module>
+                    <class>Training_Avatarcustomer_Model_Resource_Setup</class>
+                </setup>
+            </avatarcustomer_setup>
+        </resources>
+        <models>
+            <training_avatarcustomer>
+                <class>Training_Avatarcustomer_Model</class>
+            </training_avatarcustomer>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <training_avatarcustomer before="Mage_Customer">Training_Avatarcustomer</training_avatarcustomer>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+        <layout>
+            <updates>
+                <training_avatarcustomer>
+                    <file>training/avatarcustomer/forms.xml</file>
+                </training_avatarcustomer>
+            </updates>
+        </layout>
+    </frontend>
+</config>
