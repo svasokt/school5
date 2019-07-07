@@ -12,7 +12,11 @@
 
 class Training_Avatarcustomer_Block_Edit extends Mage_Customer_Block_Form_Edit
 {
-
+    /**
+     * Return items for multiselect
+     *
+     * @return mixed
+     */
     public function getModel()
     {
         $data = Mage::getModel("training_avatarcustomer/skills");
@@ -20,10 +24,16 @@ class Training_Avatarcustomer_Block_Edit extends Mage_Customer_Block_Form_Edit
         return $data::getOptionArray();
     }
 
+    /**
+     * Get data from db and return array
+     *
+     * @return array
+     */
     public function getChosenOptions()
     {
         $string = $this->getCustomer()->getSkills();
         $array = explode(",", $string);
+
         return $array;
     }
 }
