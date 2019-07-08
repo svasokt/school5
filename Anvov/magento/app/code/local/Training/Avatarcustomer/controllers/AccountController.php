@@ -145,8 +145,8 @@ class Training_Avatarcustomer_AccountController extends Mage_Customer_AccountCon
                     $UnstablePath = $uploader::getDispretionPath($_FILES['avatar']['name']) . '/';
 
                     /** new server url with  media/customer */
-                    $path = Mage::helper('training_avatarcustomer')->getUrl($this->_getRefererUrl());
-                    $pathToCustomer = $path . $UnstablePath . $_FILES['avatar']['name'];
+//                    $path = Mage::helper('training_avatarcustomer')->getUrl($this->_getRefererUrl());
+                    $pathToCustomer = $UnstablePath . $_FILES['avatar']['name'];
                     /** save full url to image in db */
                     $customer->setData('avatar', $pathToCustomer);
                 }

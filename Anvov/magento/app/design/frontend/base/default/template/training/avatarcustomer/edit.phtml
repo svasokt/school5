@@ -46,18 +46,17 @@
                 <?php if ($this->escapeHtml($this->getCustomer()->getAvatar()) == null): ?>
                     <img src= "<?php echo Mage::helper('training_avatarcustomer')->getPlaceholder();?>" alt="account pic" style="height: 150px; width 150px">
                 <?php elseif ($this->escapeHtml($this->getCustomer()->getAvatar())): ?>
-                <img src="<?php echo $this->escapeHtml($this->getCustomer()->getAvatar()); ?>" alt="account pic" style="height: 150px; width 150px">
+                <img src="<?php echo $this->getImageUrl(); ?>" alt="account pic" style="height: 150px; width 150px">
                 <?php endif; ?>
             </div>
             <li class="fields">
                 <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())->toHtml() ?>
             </li>
-            <p> <?php echo $this->getChosenOptions()?></p>
             <li>
                 <label for="skills" class="required"><em>*</em><?php echo $this->__('Skills') ?></label>
                 <div class="input-box">
                     <select name="skills[]" multiple="multiple" id="skills" size="5" class = "required-entry">
-                        <?php foreach ($this->getModel() as $key => $value): ?>
+                        <?php foreach ($this->adapterSourceModel() as $key => $value): ?>
                         <option value="<?php echo $key;?>" <?php  if(in_array($key, $this->getChosenOptions())): ?>selected <?php endif;?>><?php echo $value?></option>
                         <?php endforeach;?>
                     </select>

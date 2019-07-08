@@ -13,15 +13,36 @@
 class Training_Avatarcustomer_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
+    /**
+     * Method for forming Url in AccountController
+     *
+     * @param $route
+     * @return string
+     */
     public function getMyUrl($route)
     {
         $route = strstr($route, 'custo', true);
         return $route;
     }
 
+    /**
+     * Get placeholder url for template
+     *
+     * @return string
+     */
     public function getPlaceholder()
     {
-        return "/media/customer/person-placeholder.jpg";
+        return "/media/catalog/category/person-placeholder.jpg";
+    }
+
+    /**
+     * Get part for forming Url in block Edit.php
+     *
+     * @return string
+     */
+    public function getPartImageUrl()
+    {
+        return "/media/customer";
     }
 
     /**
@@ -37,6 +58,12 @@ class Training_Avatarcustomer_Helper_Data extends Mage_Core_Helper_Abstract
         return $serverUrl . "media/customer";
     }
 
+    /**
+     * Change array from multi select into string
+     *
+     * @param $array
+     * @return string
+     */
     public function getMultiSelect($array)
     {
         $string = implode( ',' ,$array);

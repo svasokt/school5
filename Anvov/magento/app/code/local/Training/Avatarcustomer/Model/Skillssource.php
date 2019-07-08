@@ -10,6 +10,12 @@
 
 class Training_Avatarcustomer_Model_Skillssource extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
+    /**
+     * Special type of writing to add options for
+     * multi select in db
+     *
+     * @return array
+     */
     public function getAllOptions()
     {
         if (is_null($this->_options)) {
