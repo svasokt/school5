@@ -8,7 +8,7 @@
 <config>
     <modules>
         <Training_Avatarcustomer>
-            <version>0.1.2</version>
+            <version>0.1.0</version>
         </Training_Avatarcustomer>
     </modules>
     <global>
@@ -21,11 +21,6 @@
             <training_avatarcustomer>
                 <class>Training_Avatarcustomer_Block</class>
             </training_avatarcustomer>
-<!--            <adminhtml>-->
-<!--                <rewrite>-->
-<!--                    <training_avatarcustomer>Efk_Adminhtml_Block_Review_Edit_Form</training_avatarcustomer>-->
-<!--                </rewrite>-->
-<!--            </adminhtml>-->
         </blocks>
         <resources>
             <avatarcustomer_setup>

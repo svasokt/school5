@@ -11,30 +11,11 @@ require_once 'Mage/Customer/controllers/AccountController.php';
 
 class Training_Avatarcustomer_AccountController extends Mage_Customer_AccountController
 {
-    public function editAction()
-    {
-        $this->loadLayout();
-        $this->_initLayoutMessages('customer/session');
-        $this->_initLayoutMessages('catalog/session');
-
-        $block = $this->getLayout()->getBlock('customer_edit');
-        if ($block) {
-            $block->setRefererUrl($this->_getRefererUrl());
-        }
-        $data = $this->_getSession()->getCustomerFormData(true);
-        $customer = $this->_getSession()->getCustomer();
-        if (!empty($data)) {
-            $customer->addData($data);
-        }
-        if ($this->getRequest()->getParam('changepass') == 1) {
-            $customer->setChangePassword(1);
-        }
-
-        $this->getLayout()->getBlock('head')->setTitle($this->__('Account Information'));
-        $this->getLayout()->getBlock('messages')->setEscapeMessageFlag(true);
-        $this->renderLayout();
-    }
-
+    /**
+     * Rewrite save method on edition form
+     *
+     * @return $this|Mage_Core_Controller_Varien_Action|Mage_Customer_AccountController|void
+     */
     public function editPostAction()
     {
         if (!$this->_validateFormKey()) {
@@ -143,9 +124,6 @@ class Training_Avatarcustomer_AccountController extends Mage_Customer_AccountCon
 
                     /** uploader made url to sort images by alphabet */
                     $UnstablePath = $uploader::getDispretionPath($_FILES['avatar']['name']) . '/';
-
-                    /** new server url with  media/customer */
-//                    $path = Mage::helper('training_avatarcustomer')->getUrl($this->_getRefererUrl());
                     $pathToCustomer = $UnstablePath . $_FILES['avatar']['name'];
                     /** save full url to image in db */
                     $customer->setData('avatar', $pathToCustomer);
