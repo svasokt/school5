@@ -1,0 +1,7 @@
+<h1><?php echo $this->getEavModelById()->getTitle()?></h1>
+<img src="<?php echo $this->getEavModelById()->getPicture()?>"
+     alt="<?php echo $this->getEavModelById()->getTitle()?>"/>
+<p><?php echo $this->getEavModelById()->getDescription()?></p>
+</br>
+<p><?php echo $this->getEavModelById()->getCreator()?></p>
+<a href="<?php echo $this->getUrl('games')?>"><h1>BACK</h1></a>
