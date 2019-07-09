@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Avatarcustomer
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+
+<layout version="0.1.0">
+    <customer_account_edit translate="label">
+        <label>Customer Account Edit Form</label>
+        <reference name="root">
+            <action method="setHeaderTitle" translate="title" module="customer"><title>Edit Account Info</title></action>
+        </reference>
+        <reference name="my.account.wrapper">
+            <block type="training_avatarcustomer/edit" name="customer_edit" template="training/avatarcustomer/edit.phtml"/>
+        </reference>
+
+        <reference name="left">
+            <action method="unsetChild"><name>left.permanent.callout</name></action>
+        </reference>
+    </customer_account_edit>
+</layout>

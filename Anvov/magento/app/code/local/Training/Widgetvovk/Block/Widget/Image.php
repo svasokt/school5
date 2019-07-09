@@ -1,6 +1,6 @@
 <?php
 /**
- * Grid for Widget
+ * Image uploader
  *
  * @category    Training
  * @package     Training_Widgetvovk
@@ -9,6 +9,7 @@
  */
 class Training_Widgetvovk_Block_Widget_Image extends Mage_Adminhtml_Block_Template implements Varien_Data_Form_Element_Renderer_Interface
 {
+
 
     public function prepareElementHtml(Varien_Data_Form_Element_Abstract $element)
     {

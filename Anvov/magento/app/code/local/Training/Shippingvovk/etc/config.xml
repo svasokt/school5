@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Training
+ * @package     Training_Shippingvovk
+ * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
+ * @license     Smile
+-->
+<config>
+    <modules>
+        <Training_Shippingvovk>
+            <version>0.1.0</version>
+        </Training_Shippingvovk>
+    </modules>
+    <global>
+        <helpers>
+            <training_shippingvovk>
+                <class>Training_Shippingvovk_Helper</class>
+            </training_shippingvovk>
+        </helpers>
+        <blocks>
+            <training_shippingvovk>
+                <!-- Set a block definition and lookup directory -->
+                <class>Training_Shippingvovk_Block</class>
+            </training_shippingvovk>
+        </blocks>
+        <models>
+            <training_shippingvovk>
+                <class>Training_Shippingvovk_Model</class>
+            </training_shippingvovk>
+        </models>
+    </global>
+    <default>
+        <carriers>
+            <training_shippingvovk>
+                <active>1</active>
+                <model>training_shippingvovk/carrier</model>
+                <title>Training Shipping Carrier</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>0</sallowspecific>
+                <express_max_weight>1</express_max_weight>
+            </training_shippingvovk>
+        </carriers>
+    </default>
+</config>
