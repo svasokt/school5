@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<layout version="1.0.0">
+    <adminhtml_deliveryx_deliveryxgrid_offices>
+        <reference name="content">
+            <block type="deliveryx/adminhtml_offices_officesgrid" name="offices"/>
+        </reference>
+    </adminhtml_deliveryx_deliveryxgrid_offices>
+</layout>
