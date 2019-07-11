@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <deliveryx translate="title" module="adminhtml">
+            <title>Delivery  X</title>
+            <sort_order>98</sort_order>
+            <children>
+                <offices translate="title">
+                    <title>Offices</title>
+                    <sort_order>0</sort_order>
+                    <action>*/deliveryx_deliveryxgrid/offices</action>
+                </offices>
+            </children>
+        </deliveryx>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <deliveryx translate="title" module="deliveryx">
+                        <title>DeliveryX</title>
+                        <sort_order>98</sort_order>
+                        <children>
+                            <deliveryxbackend translate="title">
+                                <title>Manage DeliveryX</title>
+                            </deliveryxbackend>
+                        </children>
+                    </deliveryx>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
