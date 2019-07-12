@@ -1,0 +1,47 @@
+<config>
+    <tabs>
+        <customer translate="label" module="customer">
+            <label>Customers!!!</label>
+            <sort_order>300</sort_order>
+        </customer>
+    </tabs>
+    <sections>
+        <schooltask translate="label" module="customer">
+            <label>Cashback Configuration</label>
+            <tab>customer</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <schooltask_group translate="label">
+                    <label>Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <schooltask_enabled translate="label">
+                            <label>Enabled:</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </schooltask_enabled>
+                        <schooltask_cashback_percent>
+                            <label>Cashback percent:</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </schooltask_cashback_percent>
+                    </fields>
+                </schooltask_group>
+            </groups>
+        </schooltask>
+    </sections>
+</config>

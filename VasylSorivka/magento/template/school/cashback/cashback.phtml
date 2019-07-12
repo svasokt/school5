@@ -1,0 +1,30 @@
+<?php  /* @var School_Task_Block_Cashback $this */ ?>
+
+<?php
+$customerCashback = $this->getCustomerCashback();
+$baseCashbackDiscountAmount = $this->getQuote()->getBaseCashbackDiscountAmount();
+?>
+
+<form id="discount-cashback-form" action="<?php echo $this->getFormActionUrl() ?>" method="post">
+    <div class="discount">
+        <h5><?php echo $this->__('You have %.2f cashback points ', $customerCashback - $baseCashbackDiscountAmount) ?></h5>
+        <div class="cashback-form">
+            <label for="cashback_amount"><?php echo $this->__('Spend cashback points').'</br>' ?></label>
+
+            <div class="field-wrapper">
+                <input type="text"
+                       id="cashback_amount"
+                       name="cashback_amount"
+                       value="<?php echo round($baseCashbackDiscountAmount, 2);?>"
+                       style="width: 250px"
+                />
+                <input type="checkbox" title="all" name="all_customer_cashback" value="1"/>
+                <?php echo $this->__('Spend all points') . '<br>';?>
+                <div class="button-wrapper">
+                    <button type="submit" name="cashback_action" value="apply">Apply</button>
+                    <button type="submit" name="cashback_action" value="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
