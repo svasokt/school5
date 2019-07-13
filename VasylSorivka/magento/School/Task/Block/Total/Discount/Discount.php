@@ -9,7 +9,7 @@ class School_Task_Block_Total_Discount_Discount extends Mage_Sales_Block_Order_T
     public function initTotals()
     {
         $order = $this->getSource();
-        if ($order->getCashbackDiscountAmount() > 0){
+        if ($order->getCashbackDiscountAmount() < 0){
             $this->getParentBlock()->addTotal(
                 new Varien_Object(array(
                     'code' => 'cashback_discount',
